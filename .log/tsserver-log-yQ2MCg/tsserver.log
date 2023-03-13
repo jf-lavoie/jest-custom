@@ -1,0 +1,101 @@
+Info 0    [15:52:23.436] Starting TS Server
+Info 1    [15:52:23.437] Version: 4.9.5
+Info 2    [15:52:23.437] Arguments: /home/jfl/.nvm/versions/node/v19.5.0/bin/node /home/jfl/projects/jest-custom/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /tmp/cfdbe82e4062cba34d3f899da8f2216e/tscancellation* --logVerbosity verbose --logFile /home/jfl/projects/jest-custom/.log/tsserver-log-yQ2MCg/tsserver.log --locale en --validateDefaultNpmLocation --useNodeIpc
+Info 3    [15:52:23.437] Platform: linux NodeVersion: 19 CaseSensitive: true
+Info 4    [15:52:23.437] ServerMode: 1 syntaxOnly: false hasUnknownServerMode: undefined
+Info 5    [15:52:23.443] request:
+    {
+      "seq": 0,
+      "type": "request",
+      "command": "configure",
+      "arguments": {
+        "hostInfo": "neovim",
+        "formatOptions": {
+          "newLineCharacter": "\n"
+        },
+        "preferences": {
+          "allowIncompleteCompletions": true,
+          "allowRenameOfImportPath": true,
+          "allowTextChangesInNewFiles": true,
+          "disableLineTextInReferences": true,
+          "disableSuggestions": false,
+          "displayPartsForJSDoc": true,
+          "generateReturnInDocTemplate": true,
+          "importModuleSpecifierEnding": "auto",
+          "importModuleSpecifierPreference": "shortest",
+          "includeAutomaticOptionalChainCompletions": true,
+          "includeCompletionsForImportStatements": true,
+          "includeCompletionsForModuleExports": true,
+          "includeCompletionsWithClassMemberSnippets": true,
+          "includeCompletionsWithInsertText": true,
+          "includeCompletionsWithObjectLiteralMethodSnippets": true,
+          "includeCompletionsWithSnippetText": true,
+          "includeInlayEnumMemberValueHints": false,
+          "includeInlayFunctionLikeReturnTypeHints": false,
+          "includeInlayFunctionParameterTypeHints": false,
+          "includeInlayParameterNameHints": "none",
+          "includeInlayParameterNameHintsWhenArgumentMatchesName": false,
+          "includeInlayPropertyDeclarationTypeHints": false,
+          "includeInlayVariableTypeHints": false,
+          "includeInlayVariableTypeHintsWhenTypeMatchesName": false,
+          "includePackageJsonAutoImports": "auto",
+          "jsxAttributeCompletionStyle": "auto",
+          "lazyConfiguredProjectsFromExternalProject": false,
+          "providePrefixAndSuffixTextForRename": true,
+          "provideRefactorNotApplicableReason": true,
+          "quotePreference": "auto",
+          "useLabelDetailsInCompletionEntries": true
+        }
+      }
+    }
+Info 6    [15:52:23.443] Host information neovim
+Info 7    [15:52:23.443] Format host information updated
+Info 8    [15:52:23.443] response:
+    {"seq":0,"type":"response","command":"configure","request_seq":0,"success":true}
+Perf 9    [15:52:23.444] 0::configure: async elapsed time (in milliseconds) 0.9840
+Info 10   [15:52:23.444] request:
+    {
+      "seq": 1,
+      "type": "request",
+      "command": "open",
+      "arguments": {
+        "file": "/home/jfl/projects/jest-custom/tests/index.test.ts",
+        "fileContent": "import { myFunc } from \"../src\";\n\nexpect.extend({\n  toMatchExpectedTwoItemsArray(\n    received: any,\n    firstItem: any,\n    secondItem: any\n  ): jest.CustomMatcherResult {\n    if (!Array.isArray(received)) {\n      return {\n        pass: false,\n        message: () => `Expected array, received ${received}`,\n      };\n    }\n\n    const receivedArray: Array<number> = received as Array<number>;\n\n    const pass =\n      receivedArray.length === 2 &&\n      receivedArray[0] === firstItem &&\n      receivedArray[1] === secondItem;\n\n    return {\n      pass,\n      message: () =>\n        // prettier-ignore\n        `Expected: ${this.utils.printExpected([firstItem, secondItem])}\\nReceived: ${this.utils.printReceived(received)}\\n\\n${this.utils.diff([firstItem, secondItem], received)}`,\n    };\n  },\n});\n\ndescribe(\"index tests\", () => {\n  it(\"should return an array of 2 items\", () => {\n    expect(myFunc()).toHaveLength(2);\n\n    expect(myFunc()).toMatchExpectedTwoItemsArray(1, 2);\n  });\n});\n",
+        "scriptKindName": "TS",
+        "projectRootPath": "/home/jfl/projects/jest-custom"
+      }
+    }
+Info 11   [15:52:23.449] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 12   [15:52:24.306] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 1 structureChanged: true structureIsReused:: Not Elapsed: 856.6245920658112ms
+Info 13   [15:52:24.306] Project '/dev/null/inferredProject1*' (Inferred)
+Info 14   [15:52:24.308] 	Files (6)
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es5.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.dom.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.webworker.importscripts.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.scripthost.d.ts
+	/home/jfl/projects/jest-custom/tests/index.test.ts
+
+
+	node_modules/typescript/lib/lib.d.ts
+	  Default library for target 'es5'
+	node_modules/typescript/lib/lib.es5.d.ts
+	  Library referenced via 'es5' from file 'node_modules/typescript/lib/lib.d.ts'
+	node_modules/typescript/lib/lib.dom.d.ts
+	  Library referenced via 'dom' from file 'node_modules/typescript/lib/lib.d.ts'
+	node_modules/typescript/lib/lib.webworker.importscripts.d.ts
+	  Library referenced via 'webworker.importscripts' from file 'node_modules/typescript/lib/lib.d.ts'
+	node_modules/typescript/lib/lib.scripthost.d.ts
+	  Library referenced via 'scripthost' from file 'node_modules/typescript/lib/lib.d.ts'
+	tests/index.test.ts
+	  Root file specified for compilation
+
+Info 15   [15:52:24.308] -----------------------------------------------
+Info 16   [15:52:24.309] Project '/dev/null/inferredProject1*' (Inferred)
+Info 16   [15:52:24.309] 	Files (6)
+
+Info 16   [15:52:24.309] -----------------------------------------------
+Info 16   [15:52:24.310] Open files: 
+Info 16   [15:52:24.310] 	FileName: /home/jfl/projects/jest-custom/tests/index.test.ts ProjectRootPath: /home/jfl/projects/jest-custom
+Info 16   [15:52:24.310] 		Projects: /dev/null/inferredProject1*
+Perf 16   [15:52:24.310] 1::open: async elapsed time (in milliseconds) 865.7506

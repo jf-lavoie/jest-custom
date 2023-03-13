@@ -1,0 +1,79 @@
+[15:52:23.701] Global cache location '/home/jfl/.cache/typescript/4.9', safe file path '/home/jfl/projects/jest-custom/node_modules/typescript/lib/typingSafeList.json', types map path /home/jfl/projects/jest-custom/node_modules/typescript/lib/typesMap.json
+[15:52:23.702] Processing cache location '/home/jfl/.cache/typescript/4.9'
+[15:52:23.702] Trying to find '/home/jfl/.cache/typescript/4.9/package.json'...
+[15:52:23.705] Loaded content of '/home/jfl/.cache/typescript/4.9/package.json': {"private":true,"dependencies":{"types-registry":"^0.1.635"},"devDependencies":{"@types/babel__code-frame":"^7.0.3","@types/babel__core":"^7.20.0","@types/babel__generator":"^7.6.4","@types/babel__preset-env":"^7.9.2","@types/babel__template":"^7.4.1","@types/babel__traverse":"^7.18.3","@types/benchmark":"^2.1.2","@types/chai":"^4.3.4","@types/coffeescript":"^2.5.2","@types/debug":"^4.1.7","@types/diff":"^5.0.2","@types/eslint":"^8.21.1","@types/eslint-config-prettier":"^6.11.0","@types/eslint-plugin-prettier":"^3.1.0","@types/fail-on-errors-webpack-plugin":"^3.0.2","@types/fs-extra":"^11.0.1","@types/gensync":"^1.0.0","@types/glob":"^8.1.0","@types/globalthis":"^1.0.1","@types/he":"^1.2.0","@types/jest":"^29.4.0","@types/jest-when":"^3.5.2","@types/js-yaml":"^4.0.5","@types/karma":"^6.3.3","@types/karma-chrome-launcher":"^3.1.1","@types/karma-mocha":"^1.3.1","@types/karma-mocha-reporter":"^2.2.1","@types/lodash":"^4.14.191","@types/markdown-it":"^12.2.3","@types/markdown-it-attrs":"^4.1.0","@types/markdown-it-emoji":"^2.0.2","@types/mocha":"^10.0.1","@types/ms":"^0.7.31","@types/needle":"^3.2.0","@types/prettier":"^2.7.2","@types/pretty-quick":"^3.1.1","@types/rollup-plugin-node-globals":"^1.4.1","@types/rollup-plugin-visualizer":"^4.2.1","@types/semantic-release":"^20.0.1","@types/semver":"^7.3.13","@types/semver-compare":"^1.0.1","@types/serialize-javascript":"^5.0.2","@types/sinon":"^10.0.13","@types/source-map-support":"^0.5.6","@types/supports-color":"^8.1.1","@types/touch":"^3.1.2","@types/tough-cookie":"^4.0.2","@types/update-notifier":"^6.0.2","@types/uslug":"^1.0.1","@types/uuid":"^9.0.1","@types/webpack":"^5.28.0","@types/which":"^2.0.2","@types/workerpool":"^6.1.1","@types/yargs":"^17.0.22","@types/yargs-parser":"^21.0.0","@types/yargs-unparser":"^2.0.1"}}
+[15:52:23.705] Loaded content of '/home/jfl/.cache/typescript/4.9/package-lock.json'
+[15:52:23.721] Adding entry into typings cache: 'babel__code-frame' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/babel__code-frame/index.d.ts'
+[15:52:23.724] Adding entry into typings cache: 'babel__core' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/babel__core/index.d.ts'
+[15:52:23.727] Adding entry into typings cache: 'babel__generator' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/babel__generator/index.d.ts'
+[15:52:23.728] Adding entry into typings cache: 'babel__preset-env' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/babel__preset-env/index.d.ts'
+[15:52:23.729] Adding entry into typings cache: 'babel__template' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/babel__template/index.d.ts'
+[15:52:23.734] Adding entry into typings cache: 'babel__traverse' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/babel__traverse/index.d.ts'
+[15:52:23.736] Adding entry into typings cache: 'benchmark' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/benchmark/index.d.ts'
+[15:52:23.740] Adding entry into typings cache: 'chai' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/chai/index.d.ts'
+[15:52:23.741] Adding entry into typings cache: 'coffeescript' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/coffeescript/index.d.ts'
+[15:52:23.745] Adding entry into typings cache: 'debug' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/debug/index.d.ts'
+[15:52:23.746] Adding entry into typings cache: 'diff' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/diff/index.d.ts'
+[15:52:23.750] Adding entry into typings cache: 'eslint' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/eslint/index.d.ts'
+[15:52:23.751] Adding entry into typings cache: 'eslint-config-prettier' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/eslint-config-prettier/index.d.ts'
+[15:52:23.752] Adding entry into typings cache: 'eslint-plugin-prettier' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/eslint-plugin-prettier/index.d.ts'
+[15:52:23.753] Adding entry into typings cache: 'fail-on-errors-webpack-plugin' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/fail-on-errors-webpack-plugin/index.d.ts'
+[15:52:23.757] Adding entry into typings cache: 'fs-extra' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/fs-extra/index.d.ts'
+[15:52:23.760] Adding entry into typings cache: 'gensync' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/gensync/index.d.ts'
+[15:52:23.761] Adding entry into typings cache: 'glob' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/glob/index.d.ts'
+[15:52:23.762] Adding entry into typings cache: 'globalthis' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/globalthis/index.d.ts'
+[15:52:23.764] Adding entry into typings cache: 'he' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/he/index.d.ts'
+[15:52:23.771] Adding entry into typings cache: 'jest' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/jest/index.d.ts'
+[15:52:23.773] Adding entry into typings cache: 'jest-when' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/jest-when/index.d.ts'
+[15:52:23.774] Adding entry into typings cache: 'js-yaml' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/js-yaml/index.d.ts'
+[15:52:23.777] Adding entry into typings cache: 'karma' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/karma/index.d.ts'
+[15:52:23.778] Adding entry into typings cache: 'karma-chrome-launcher' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/karma-chrome-launcher/index.d.ts'
+[15:52:23.780] Adding entry into typings cache: 'karma-mocha' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/karma-mocha/index.d.ts'
+[15:52:23.782] Adding entry into typings cache: 'karma-mocha-reporter' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/karma-mocha-reporter/index.d.ts'
+[15:52:23.785] Adding entry into typings cache: 'lodash' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/lodash/index.d.ts'
+[15:52:23.786] Adding entry into typings cache: 'markdown-it' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/markdown-it/index.d.ts'
+[15:52:23.787] Adding entry into typings cache: 'markdown-it-attrs' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/markdown-it-attrs/index.d.ts'
+[15:52:23.788] Adding entry into typings cache: 'markdown-it-emoji' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/markdown-it-emoji/index.d.ts'
+[15:52:23.795] Adding entry into typings cache: 'mocha' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/mocha/index.d.ts'
+[15:52:23.797] Adding entry into typings cache: 'ms' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/ms/index.d.ts'
+[15:52:23.803] Adding entry into typings cache: 'needle' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/needle/index.d.ts'
+[15:52:23.805] Adding entry into typings cache: 'prettier' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/prettier/index.d.ts'
+[15:52:23.805] Adding entry into typings cache: 'pretty-quick' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/pretty-quick/index.d.ts'
+[15:52:23.806] Adding entry into typings cache: 'rollup-plugin-node-globals' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/rollup-plugin-node-globals/index.d.ts'
+[15:52:23.807] Adding entry into typings cache: 'rollup-plugin-visualizer' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/rollup-plugin-visualizer/index.d.ts'
+[15:52:23.808] Adding entry into typings cache: 'semantic-release' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/semantic-release/index.d.ts'
+[15:52:23.810] Adding entry into typings cache: 'semver' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/semver/index.d.ts'
+[15:52:23.810] Adding entry into typings cache: 'semver-compare' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/semver-compare/index.d.ts'
+[15:52:23.812] Adding entry into typings cache: 'serialize-javascript' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/serialize-javascript/index.d.ts'
+[15:52:23.823] Adding entry into typings cache: 'sinon' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/sinon/index.d.ts'
+[15:52:23.825] Adding entry into typings cache: 'source-map-support' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/source-map-support/index.d.ts'
+[15:52:23.826] Adding entry into typings cache: 'supports-color' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/supports-color/index.d.ts'
+[15:52:23.827] Adding entry into typings cache: 'touch' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/touch/index.d.ts'
+[15:52:23.837] Adding entry into typings cache: 'tough-cookie' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/tough-cookie/index.d.ts'
+[15:52:23.846] Adding entry into typings cache: 'update-notifier' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/update-notifier/index.d.ts'
+[15:52:23.852] Adding entry into typings cache: 'uslug' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/uslug/index.d.ts'
+[15:52:23.853] Adding entry into typings cache: 'uuid' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/uuid/index.d.ts'
+[15:52:23.855] Adding entry into typings cache: 'webpack' => '/home/jfl/.cache/typescript/4.9/node_modules/webpack/types.d.ts'
+[15:52:23.856] Adding entry into typings cache: 'which' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/which/index.d.ts'
+[15:52:23.857] Adding entry into typings cache: 'workerpool' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/workerpool/index.d.ts'
+[15:52:23.864] Adding entry into typings cache: 'yargs' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/yargs/index.d.ts'
+[15:52:23.865] Adding entry into typings cache: 'yargs-parser' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/yargs-parser/index.d.ts'
+[15:52:23.865] Adding entry into typings cache: 'yargs-unparser' => '/home/jfl/.cache/typescript/4.9/node_modules/@types/yargs-unparser/index.d.ts'
+[15:52:23.865] Finished processing cache location '/home/jfl/.cache/typescript/4.9'
+[15:52:23.866] Process id: 838038
+[15:52:23.866] NPM location: "/home/jfl/.nvm/versions/node/v19.5.0/bin/npm" (explicit '--npmLocation' not  provided)
+[15:52:23.866] validateDefaultNpmLocation: true
+[15:52:23.866] Npm config file: /home/jfl/.cache/typescript/4.9/package.json
+[15:52:23.866] Updating types-registry npm package...
+[15:52:23.866] Exec: "/home/jfl/.nvm/versions/node/v19.5.0/bin/npm" install --ignore-scripts types-registry@latest
+[15:52:25.224]     Succeeded. stdout:
+    
+    up to date, audited 274 packages in 825ms
+
+26 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+[15:52:25.224] Updated types-registry npm package
+[15:52:27.927] Parent process has exited, shutting down...

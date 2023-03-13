@@ -1,0 +1,1587 @@
+Info 0    [15:52:23.431] Starting TS Server
+Info 1    [15:52:23.431] Version: 4.9.5
+Info 2    [15:52:23.431] Arguments: /home/jfl/.nvm/versions/node/v19.5.0/bin/node /home/jfl/projects/jest-custom/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --cancellationPipeName /tmp/6d1416e0fe494e0f3c2726169808268b/tscancellation* --logVerbosity verbose --logFile /home/jfl/projects/jest-custom/.log/tsserver-log-jFbiZM/tsserver.log --locale en --validateDefaultNpmLocation --useNodeIpc
+Info 3    [15:52:23.431] Platform: linux NodeVersion: 19 CaseSensitive: true
+Info 4    [15:52:23.431] ServerMode: undefined syntaxOnly: false hasUnknownServerMode: undefined
+Info 5    [15:52:23.436] Binding...
+Info 6    [15:52:23.443] request:
+    {
+      "seq": 0,
+      "type": "request",
+      "command": "configure",
+      "arguments": {
+        "hostInfo": "neovim",
+        "formatOptions": {
+          "newLineCharacter": "\n"
+        },
+        "preferences": {
+          "allowIncompleteCompletions": true,
+          "allowRenameOfImportPath": true,
+          "allowTextChangesInNewFiles": true,
+          "disableLineTextInReferences": true,
+          "disableSuggestions": false,
+          "displayPartsForJSDoc": true,
+          "generateReturnInDocTemplate": true,
+          "importModuleSpecifierEnding": "auto",
+          "importModuleSpecifierPreference": "shortest",
+          "includeAutomaticOptionalChainCompletions": true,
+          "includeCompletionsForImportStatements": true,
+          "includeCompletionsForModuleExports": true,
+          "includeCompletionsWithClassMemberSnippets": true,
+          "includeCompletionsWithInsertText": true,
+          "includeCompletionsWithObjectLiteralMethodSnippets": true,
+          "includeCompletionsWithSnippetText": true,
+          "includeInlayEnumMemberValueHints": false,
+          "includeInlayFunctionLikeReturnTypeHints": false,
+          "includeInlayFunctionParameterTypeHints": false,
+          "includeInlayParameterNameHints": "none",
+          "includeInlayParameterNameHintsWhenArgumentMatchesName": false,
+          "includeInlayPropertyDeclarationTypeHints": false,
+          "includeInlayVariableTypeHints": false,
+          "includeInlayVariableTypeHintsWhenTypeMatchesName": false,
+          "includePackageJsonAutoImports": "auto",
+          "jsxAttributeCompletionStyle": "auto",
+          "lazyConfiguredProjectsFromExternalProject": false,
+          "providePrefixAndSuffixTextForRename": true,
+          "provideRefactorNotApplicableReason": true,
+          "quotePreference": "auto",
+          "useLabelDetailsInCompletionEntries": true
+        }
+      }
+    }
+Info 7    [15:52:23.444] Host information neovim
+Info 8    [15:52:23.444] Format host information updated
+Info 9    [15:52:23.444] response:
+    {"seq":0,"type":"response","command":"configure","request_seq":0,"success":true}
+Perf 10   [15:52:23.445] 0::configure: async elapsed time (in milliseconds) 1.7923
+Info 11   [15:52:23.445] event:
+    {"seq":0,"type":"event","event":"typingsInstallerPid","body":{"pid":838038}}
+Info 12   [15:52:23.446] request:
+    {
+      "seq": 1,
+      "type": "request",
+      "command": "compilerOptionsForInferredProjects",
+      "arguments": {
+        "options": {
+          "module": "ESNext",
+          "moduleResolution": "Node",
+          "target": "ES2020",
+          "jsx": "React",
+          "strictNullChecks": true,
+          "strictFunctionTypes": true,
+          "sourceMap": true,
+          "allowJs": true,
+          "allowNonTsExtensions": true,
+          "allowSyntheticDefaultImports": true,
+          "resolveJsonModule": true
+        }
+      }
+    }
+Perf 13   [15:52:23.447] 1::compilerOptionsForInferredProjects: elapsed time (in milliseconds) 0.5410
+Info 14   [15:52:23.447] response:
+    {"seq":0,"type":"response","command":"compilerOptionsForInferredProjects","request_seq":1,"success":true,"body":true}
+Info 15   [15:52:23.447] request:
+    {
+      "seq": 2,
+      "type": "request",
+      "command": "open",
+      "arguments": {
+        "file": "/home/jfl/projects/jest-custom/tests/index.test.ts",
+        "fileContent": "import { myFunc } from \"../src\";\n\nexpect.extend({\n  toMatchExpectedTwoItemsArray(\n    received: any,\n    firstItem: any,\n    secondItem: any\n  ): jest.CustomMatcherResult {\n    if (!Array.isArray(received)) {\n      return {\n        pass: false,\n        message: () => `Expected array, received ${received}`,\n      };\n    }\n\n    const receivedArray: Array<number> = received as Array<number>;\n\n    const pass =\n      receivedArray.length === 2 &&\n      receivedArray[0] === firstItem &&\n      receivedArray[1] === secondItem;\n\n    return {\n      pass,\n      message: () =>\n        // prettier-ignore\n        `Expected: ${this.utils.printExpected([firstItem, secondItem])}\\nReceived: ${this.utils.printReceived(received)}\\n\\n${this.utils.diff([firstItem, secondItem], received)}`,\n    };\n  },\n});\n\ndescribe(\"index tests\", () => {\n  it(\"should return an array of 2 items\", () => {\n    expect(myFunc()).toHaveLength(2);\n\n    expect(myFunc()).toMatchExpectedTwoItemsArray(1, 2);\n  });\n});\n",
+        "scriptKindName": "TS",
+        "projectRootPath": "/home/jfl/projects/jest-custom"
+      }
+    }
+Info 16   [15:52:23.449] Search path: /home/jfl/projects/jest-custom/tests
+Info 17   [15:52:23.450] For info: /home/jfl/projects/jest-custom/tests/index.test.ts :: Config file name: /home/jfl/projects/jest-custom/tsconfig.json
+Info 18   [15:52:23.450] Creating configuration project /home/jfl/projects/jest-custom/tsconfig.json
+Info 19   [15:52:23.452] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/tsconfig.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: Config file
+Info 20   [15:52:23.453] event:
+    {"seq":0,"type":"event","event":"projectLoadingStart","body":{"projectName":"/home/jfl/projects/jest-custom/tsconfig.json","reason":"Creating possible configured project for /home/jfl/projects/jest-custom/tests/index.test.ts to open"}}
+Info 21   [15:52:23.467] Config: /home/jfl/projects/jest-custom/tsconfig.json : {
+ "rootNames": [
+  "/home/jfl/projects/jest-custom/src/index.ts"
+ ],
+ "options": {
+  "target": 2,
+  "module": 1,
+  "rootDir": "/home/jfl/projects/jest-custom/src",
+  "resolveJsonModule": true,
+  "sourceMap": true,
+  "outDir": "/home/jfl/projects/jest-custom/build",
+  "esModuleInterop": true,
+  "forceConsistentCasingInFileNames": true,
+  "strict": true,
+  "skipLibCheck": true,
+  "typeRoots": [
+   "/home/jfl/projects/jest-custom/typings",
+   "/home/jfl/projects/jest-custom/node_modules/@types"
+  ],
+  "configFilePath": "/home/jfl/projects/jest-custom/tsconfig.json"
+ }
+}
+Info 22   [15:52:23.468] DirectoryWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/src 1 undefined Config: /home/jfl/projects/jest-custom/tsconfig.json WatchType: Wild card directory
+Info 23   [15:52:23.469] Elapsed:: 0.7452419996261597ms DirectoryWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/src 1 undefined Config: /home/jfl/projects/jest-custom/tsconfig.json WatchType: Wild card directory
+Info 24   [15:52:23.470] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/src/index.ts 500 undefined WatchType: Closed Script info
+Info 25   [15:52:23.494] Starting updateGraphWorker: Project: /home/jfl/projects/jest-custom/tsconfig.json
+Info 26   [15:52:23.592] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/typings/jest-custom/index.d.ts 500 undefined WatchType: Closed Script info
+Info 27   [15:52:23.597] DirectoryWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info 28   [15:52:23.792] Elapsed:: 195.06542301177979ms DirectoryWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules 1 undefined WatchType: node_modules for closed script infos and package.jsons affecting module specifier cache
+Info 29   [15:52:24.809] DirectoryWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules 1 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: Failed Lookup Locations
+Info 30   [15:52:24.810] Elapsed:: 0.017204999923706055ms DirectoryWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules 1 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: Failed Lookup Locations
+Info 31   [15:52:24.810] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/semver/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 32   [15:52:25.349] DirectoryWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/typings 1 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: Failed Lookup Locations
+Info 33   [15:52:25.349] Elapsed:: 0.3109259605407715ms DirectoryWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/typings 1 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: Failed Lookup Locations
+Info 34   [15:52:25.349] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/babel__core/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 35   [15:52:25.349] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/babel__generator/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 36   [15:52:25.350] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/babel__template/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 37   [15:52:25.350] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/babel__traverse/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 38   [15:52:25.350] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/graceful-fs/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 39   [15:52:25.350] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/istanbul-lib-coverage/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 40   [15:52:25.350] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/istanbul-lib-coverage/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 41   [15:52:25.350] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/istanbul-lib-report/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 42   [15:52:25.350] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/istanbul-lib-report/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 43   [15:52:25.350] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/istanbul-reports/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 44   [15:52:25.351] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/jest/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 45   [15:52:25.351] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/json-schema/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 46   [15:52:25.351] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/minimatch/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 47   [15:52:25.351] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/node/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 48   [15:52:25.351] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/prettier/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 49   [15:52:25.351] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/stack-utils/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 50   [15:52:25.351] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/yargs/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 51   [15:52:25.351] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/yargs-parser/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 52   [15:52:25.351] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/yargs-parser/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 53   [15:52:25.351] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@babel/generator/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 54   [15:52:25.352] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@babel/parser/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 55   [15:52:25.352] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@babel/template/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 56   [15:52:25.352] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@babel/traverse/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 57   [15:52:25.352] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@babel/types/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 58   [15:52:25.353] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/expect/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 59   [15:52:25.353] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/pretty-format/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 60   [15:52:25.353] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@jest/expect-utils/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 61   [15:52:25.353] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/jest-matcher-utils/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 62   [15:52:25.353] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/chalk/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 63   [15:52:25.353] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/jest-diff/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 64   [15:52:25.353] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@jest/schemas/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 65   [15:52:25.354] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@sinclair/typebox/package.json 2000 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: File location affecting resolution
+Info 66   [15:52:25.354] DirectoryWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/typings 1 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: Type roots
+Info 67   [15:52:25.354] Elapsed:: 0.010265946388244629ms DirectoryWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/typings 1 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: Type roots
+Info 68   [15:52:25.354] DirectoryWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types 1 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: Type roots
+Info 69   [15:52:25.354] Elapsed:: 0.004400968551635742ms DirectoryWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types 1 undefined Project: /home/jfl/projects/jest-custom/tsconfig.json WatchType: Type roots
+Info 70   [15:52:25.354] Finishing updateGraphWorker: Project: /home/jfl/projects/jest-custom/tsconfig.json Version: 1 structureChanged: true structureIsReused:: Not Elapsed: 1860.5347479581833ms
+Info 71   [15:52:25.354] Project '/home/jfl/projects/jest-custom/tsconfig.json' (Configured)
+Info 72   [15:52:25.360] 	Files (167)
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es6.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es5.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2015.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2016.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2017.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2018.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2019.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2020.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.dom.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.dom.iterable.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.webworker.importscripts.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.scripthost.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2015.core.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2015.collection.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2015.generator.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2015.iterable.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2015.promise.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2015.proxy.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2015.reflect.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2015.symbol.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2016.array.include.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2017.object.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2017.string.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2017.intl.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2018.asynciterable.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2018.intl.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2018.promise.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2018.regexp.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2019.array.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2019.object.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2019.string.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2019.symbol.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2019.intl.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2020.bigint.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2020.date.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2020.promise.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2020.sharedmemory.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2020.string.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2020.symbol.wellknown.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2020.intl.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2020.number.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.esnext.intl.d.ts
+	/home/jfl/projects/jest-custom/src/index.ts
+	/home/jfl/projects/jest-custom/typings/jest-custom/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@babel/types/lib/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/babel__generator/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@babel/parser/typings/babel-parser.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/babel__template/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/babel__traverse/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/babel__core/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/assert.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/assert/strict.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/globals.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/async_hooks.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/buffer.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/child_process.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/cluster.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/console.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/constants.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/crypto.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/dgram.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/diagnostics_channel.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/dns.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/dns/promises.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/domain.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/dom-events.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/events.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/fs.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/fs/promises.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/http.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/http2.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/https.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/inspector.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/module.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/net.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/os.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/path.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/perf_hooks.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/process.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/punycode.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/querystring.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/readline.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/readline/promises.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/repl.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/stream.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/stream/promises.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/stream/consumers.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/stream/web.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/string_decoder.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/test.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/timers.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/timers/promises.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/tls.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/trace_events.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/tty.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/url.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/util.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/v8.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/vm.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/wasi.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/worker_threads.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/zlib.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/globals.global.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/graceful-fs/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/istanbul-lib-coverage/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/istanbul-lib-report/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/istanbul-reports/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@jest/expect-utils/build/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/chalk/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@sinclair/typebox/typebox.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@jest/schemas/build/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/pretty-format/build/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/jest-diff/build/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/jest-matcher-utils/build/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/expect/build/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/jest/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/json-schema/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/minimatch/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/prettier/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/classes/semver.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/parse.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/valid.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/clean.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/inc.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/diff.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/major.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/minor.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/patch.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/prerelease.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/compare.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/rcompare.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/compare-loose.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/compare-build.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/sort.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/rsort.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/gt.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/lt.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/eq.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/neq.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/gte.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/lte.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/cmp.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/coerce.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/classes/comparator.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/classes/range.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/satisfies.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/ranges/max-satisfying.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/ranges/min-satisfying.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/ranges/to-comparators.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/ranges/min-version.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/ranges/valid.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/ranges/outside.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/ranges/gtr.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/ranges/ltr.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/ranges/intersects.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/ranges/simplify.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/ranges/subset.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/internals/identifiers.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/stack-utils/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/yargs-parser/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/yargs/index.d.ts
+
+
+	node_modules/typescript/lib/lib.es6.d.ts
+	  Default library for target 'es6'
+	node_modules/typescript/lib/lib.es5.d.ts
+	  Library referenced via 'es5' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	  Library referenced via 'es5' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	node_modules/typescript/lib/lib.es2015.d.ts
+	  Library referenced via 'es2015' from file 'node_modules/typescript/lib/lib.es2016.d.ts'
+	  Library referenced via 'es2015' from file 'node_modules/typescript/lib/lib.es6.d.ts'
+	node_modules/typescript/lib/lib.es2016.d.ts
+	  Library referenced via 'es2016' from file 'node_modules/typescript/lib/lib.es2017.d.ts'
+	node_modules/typescript/lib/lib.es2017.d.ts
+	  Library referenced via 'es2017' from file 'node_modules/typescript/lib/lib.es2018.d.ts'
+	node_modules/typescript/lib/lib.es2018.d.ts
+	  Library referenced via 'es2018' from file 'node_modules/typescript/lib/lib.es2019.d.ts'
+	node_modules/typescript/lib/lib.es2019.d.ts
+	  Library referenced via 'es2019' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	node_modules/typescript/lib/lib.es2020.d.ts
+	  Library referenced via 'es2020' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/typescript/lib/lib.dom.d.ts
+	  Library referenced via 'dom' from file 'node_modules/typescript/lib/lib.es6.d.ts'
+	node_modules/typescript/lib/lib.dom.iterable.d.ts
+	  Library referenced via 'dom.iterable' from file 'node_modules/typescript/lib/lib.es6.d.ts'
+	node_modules/typescript/lib/lib.webworker.importscripts.d.ts
+	  Library referenced via 'webworker.importscripts' from file 'node_modules/typescript/lib/lib.es6.d.ts'
+	node_modules/typescript/lib/lib.scripthost.d.ts
+	  Library referenced via 'scripthost' from file 'node_modules/typescript/lib/lib.es6.d.ts'
+	node_modules/typescript/lib/lib.es2015.core.d.ts
+	  Library referenced via 'es2015.core' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	  Library referenced via 'es2015.core' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	node_modules/typescript/lib/lib.es2015.collection.d.ts
+	  Library referenced via 'es2015.collection' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	  Library referenced via 'es2015.collection' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	node_modules/typescript/lib/lib.es2015.generator.d.ts
+	  Library referenced via 'es2015.generator' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	  Library referenced via 'es2015.generator' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	node_modules/typescript/lib/lib.es2015.iterable.d.ts
+	  Library referenced via 'es2015.iterable' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	  Library referenced via 'es2015.iterable' from file 'node_modules/typescript/lib/lib.es2015.generator.d.ts'
+	  Library referenced via 'es2015.iterable' from file 'node_modules/typescript/lib/lib.es2018.asynciterable.d.ts'
+	  Library referenced via 'es2015.iterable' from file 'node_modules/typescript/lib/lib.es2019.object.d.ts'
+	  Library referenced via 'es2015.iterable' from file 'node_modules/typescript/lib/lib.es2020.string.d.ts'
+	  Library referenced via 'es2015.iterable' from file 'node_modules/typescript/lib/lib.es2020.symbol.wellknown.d.ts'
+	  Library referenced via 'es2015.iterable' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	  Library referenced via 'es2015.iterable' from file 'node_modules/typescript/lib/lib.es2015.generator.d.ts'
+	node_modules/typescript/lib/lib.es2015.promise.d.ts
+	  Library referenced via 'es2015.promise' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	  Library referenced via 'es2015.promise' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	node_modules/typescript/lib/lib.es2015.proxy.d.ts
+	  Library referenced via 'es2015.proxy' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	  Library referenced via 'es2015.proxy' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	node_modules/typescript/lib/lib.es2015.reflect.d.ts
+	  Library referenced via 'es2015.reflect' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	  Library referenced via 'es2015.reflect' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	node_modules/typescript/lib/lib.es2015.symbol.d.ts
+	  Library referenced via 'es2015.symbol' from file 'node_modules/typescript/lib/lib.es2015.iterable.d.ts'
+	  Library referenced via 'es2015.symbol' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	  Library referenced via 'es2015.symbol' from file 'node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts'
+	  Library referenced via 'es2015.symbol' from file 'node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts'
+	  Library referenced via 'es2015.symbol' from file 'node_modules/typescript/lib/lib.es2018.asynciterable.d.ts'
+	  Library referenced via 'es2015.symbol' from file 'node_modules/typescript/lib/lib.es2020.symbol.wellknown.d.ts'
+	  Library referenced via 'es2015.symbol' from file 'node_modules/typescript/lib/lib.es2015.iterable.d.ts'
+	  Library referenced via 'es2015.symbol' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	  Library referenced via 'es2015.symbol' from file 'node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts'
+	node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts
+	  Library referenced via 'es2015.symbol.wellknown' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	  Library referenced via 'es2015.symbol.wellknown' from file 'node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts'
+	  Library referenced via 'es2015.symbol.wellknown' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	node_modules/typescript/lib/lib.es2016.array.include.d.ts
+	  Library referenced via 'es2016.array.include' from file 'node_modules/typescript/lib/lib.es2016.d.ts'
+	node_modules/typescript/lib/lib.es2017.object.d.ts
+	  Library referenced via 'es2017.object' from file 'node_modules/typescript/lib/lib.es2017.d.ts'
+	node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts
+	  Library referenced via 'es2017.sharedmemory' from file 'node_modules/typescript/lib/lib.es2017.d.ts'
+	node_modules/typescript/lib/lib.es2017.string.d.ts
+	  Library referenced via 'es2017.string' from file 'node_modules/typescript/lib/lib.es2017.d.ts'
+	node_modules/typescript/lib/lib.es2017.intl.d.ts
+	  Library referenced via 'es2017.intl' from file 'node_modules/typescript/lib/lib.es2017.d.ts'
+	node_modules/typescript/lib/lib.es2017.typedarrays.d.ts
+	  Library referenced via 'es2017.typedarrays' from file 'node_modules/typescript/lib/lib.es2017.d.ts'
+	node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts
+	  Library referenced via 'es2018.asyncgenerator' from file 'node_modules/typescript/lib/lib.es2018.d.ts'
+	node_modules/typescript/lib/lib.es2018.asynciterable.d.ts
+	  Library referenced via 'es2018.asynciterable' from file 'node_modules/typescript/lib/lib.es2018.d.ts'
+	  Library referenced via 'es2018.asynciterable' from file 'node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts'
+	  Library referenced via 'esnext.asynciterable' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/typescript/lib/lib.es2018.intl.d.ts
+	  Library referenced via 'es2018.intl' from file 'node_modules/typescript/lib/lib.es2018.d.ts'
+	  Library referenced via 'es2018.intl' from file 'node_modules/typescript/lib/lib.es2020.intl.d.ts'
+	node_modules/typescript/lib/lib.es2018.promise.d.ts
+	  Library referenced via 'es2018.promise' from file 'node_modules/typescript/lib/lib.es2018.d.ts'
+	node_modules/typescript/lib/lib.es2018.regexp.d.ts
+	  Library referenced via 'es2018.regexp' from file 'node_modules/typescript/lib/lib.es2018.d.ts'
+	node_modules/typescript/lib/lib.es2019.array.d.ts
+	  Library referenced via 'es2019.array' from file 'node_modules/typescript/lib/lib.es2019.d.ts'
+	node_modules/typescript/lib/lib.es2019.object.d.ts
+	  Library referenced via 'es2019.object' from file 'node_modules/typescript/lib/lib.es2019.d.ts'
+	node_modules/typescript/lib/lib.es2019.string.d.ts
+	  Library referenced via 'es2019.string' from file 'node_modules/typescript/lib/lib.es2019.d.ts'
+	node_modules/typescript/lib/lib.es2019.symbol.d.ts
+	  Library referenced via 'es2019.symbol' from file 'node_modules/typescript/lib/lib.es2019.d.ts'
+	node_modules/typescript/lib/lib.es2019.intl.d.ts
+	  Library referenced via 'es2019.intl' from file 'node_modules/typescript/lib/lib.es2019.d.ts'
+	node_modules/typescript/lib/lib.es2020.bigint.d.ts
+	  Library referenced via 'es2020.bigint' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	  Library referenced via 'esnext.bigint' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/typescript/lib/lib.es2020.date.d.ts
+	  Library referenced via 'es2020.date' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	node_modules/typescript/lib/lib.es2020.promise.d.ts
+	  Library referenced via 'es2020.promise' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	node_modules/typescript/lib/lib.es2020.sharedmemory.d.ts
+	  Library referenced via 'es2020.sharedmemory' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	node_modules/typescript/lib/lib.es2020.string.d.ts
+	  Library referenced via 'es2020.string' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	node_modules/typescript/lib/lib.es2020.symbol.wellknown.d.ts
+	  Library referenced via 'es2020.symbol.wellknown' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	node_modules/typescript/lib/lib.es2020.intl.d.ts
+	  Library referenced via 'es2020.intl' from file 'node_modules/typescript/lib/lib.es2020.bigint.d.ts'
+	  Library referenced via 'es2020.intl' from file 'node_modules/typescript/lib/lib.es2020.date.d.ts'
+	  Library referenced via 'es2020.intl' from file 'node_modules/typescript/lib/lib.es2020.number.d.ts'
+	  Library referenced via 'es2020.intl' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	node_modules/typescript/lib/lib.es2020.number.d.ts
+	  Library referenced via 'es2020.number' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	node_modules/typescript/lib/lib.esnext.intl.d.ts
+	  Library referenced via 'esnext.intl' from file 'node_modules/@types/node/index.d.ts'
+	src/index.ts
+	  Matched by include pattern 'src/**/*' in 'tsconfig.json'
+	typings/jest-custom/index.d.ts
+	  Entry point for implicit type library 'jest-custom'
+	node_modules/@babel/types/lib/index.d.ts
+	  Imported via '@babel/types' from file 'node_modules/@types/babel__generator/index.d.ts' with packageId '@babel/types/lib/index.d.ts@7.21.2'
+	  Imported via '@babel/types' from file 'node_modules/@babel/parser/typings/babel-parser.d.ts' with packageId '@babel/types/lib/index.d.ts@7.21.2'
+	  Imported via '@babel/types' from file 'node_modules/@types/babel__template/index.d.ts' with packageId '@babel/types/lib/index.d.ts@7.21.2'
+	  Imported via '@babel/types' from file 'node_modules/@types/babel__traverse/index.d.ts' with packageId '@babel/types/lib/index.d.ts@7.21.2'
+	  Imported via '@babel/types' from file 'node_modules/@types/babel__core/index.d.ts' with packageId '@babel/types/lib/index.d.ts@7.21.2'
+	node_modules/@types/babel__generator/index.d.ts
+	  Imported via '@babel/generator' from file 'node_modules/@types/babel__core/index.d.ts' with packageId '@types/babel__generator/index.d.ts@7.6.4'
+	  Entry point for implicit type library 'babel__generator' with packageId '@types/babel__generator/index.d.ts@7.6.4'
+	node_modules/@babel/parser/typings/babel-parser.d.ts
+	  Imported via '@babel/parser' from file 'node_modules/@types/babel__core/index.d.ts' with packageId '@babel/parser/typings/babel-parser.d.ts@7.21.2'
+	  Imported via '@babel/parser' from file 'node_modules/@types/babel__template/index.d.ts' with packageId '@babel/parser/typings/babel-parser.d.ts@7.21.2'
+	  Imported via '@babel/parser' from file 'node_modules/@types/babel__core/index.d.ts' with packageId '@babel/parser/typings/babel-parser.d.ts@7.21.2'
+	node_modules/@types/babel__template/index.d.ts
+	  Imported via '@babel/template' from file 'node_modules/@types/babel__core/index.d.ts' with packageId '@types/babel__template/index.d.ts@7.4.1'
+	  Entry point for implicit type library 'babel__template' with packageId '@types/babel__template/index.d.ts@7.4.1'
+	node_modules/@types/babel__traverse/index.d.ts
+	  Imported via '@babel/traverse' from file 'node_modules/@types/babel__core/index.d.ts' with packageId '@types/babel__traverse/index.d.ts@7.18.3'
+	  Entry point for implicit type library 'babel__traverse' with packageId '@types/babel__traverse/index.d.ts@7.18.3'
+	node_modules/@types/babel__core/index.d.ts
+	  Entry point for implicit type library 'babel__core' with packageId '@types/babel__core/index.d.ts@7.20.0'
+	node_modules/@types/node/assert.d.ts
+	  Referenced via 'assert.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/assert/strict.d.ts
+	  Referenced via 'assert/strict.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/globals.d.ts
+	  Referenced via 'globals.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/async_hooks.d.ts
+	  Referenced via 'async_hooks.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/buffer.d.ts
+	  Referenced via 'buffer.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/child_process.d.ts
+	  Referenced via 'child_process.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/cluster.d.ts
+	  Referenced via 'cluster.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/console.d.ts
+	  Referenced via 'console.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/constants.d.ts
+	  Referenced via 'constants.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/crypto.d.ts
+	  Referenced via 'crypto.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/dgram.d.ts
+	  Referenced via 'dgram.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/diagnostics_channel.d.ts
+	  Referenced via 'diagnostics_channel.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/dns.d.ts
+	  Referenced via 'dns.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/dns/promises.d.ts
+	  Referenced via 'dns/promises.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	  Referenced via 'dns/promises.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/domain.d.ts
+	  Referenced via 'domain.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/dom-events.d.ts
+	  Referenced via 'dom-events.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/events.d.ts
+	  Referenced via 'events.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/fs.d.ts
+	  Referenced via 'fs.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/fs/promises.d.ts
+	  Referenced via 'fs/promises.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/http.d.ts
+	  Referenced via 'http.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/http2.d.ts
+	  Referenced via 'http2.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/https.d.ts
+	  Referenced via 'https.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/inspector.d.ts
+	  Referenced via 'inspector.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/module.d.ts
+	  Referenced via 'module.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/net.d.ts
+	  Referenced via 'net.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/os.d.ts
+	  Referenced via 'os.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/path.d.ts
+	  Referenced via 'path.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/perf_hooks.d.ts
+	  Referenced via 'perf_hooks.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/process.d.ts
+	  Referenced via 'process.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/punycode.d.ts
+	  Referenced via 'punycode.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/querystring.d.ts
+	  Referenced via 'querystring.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/readline.d.ts
+	  Referenced via 'readline.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/readline/promises.d.ts
+	  Referenced via 'readline/promises.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/repl.d.ts
+	  Referenced via 'repl.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/stream.d.ts
+	  Referenced via 'stream.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/stream/promises.d.ts
+	  Referenced via 'stream/promises.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/stream/consumers.d.ts
+	  Referenced via 'stream/consumers.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/stream/web.d.ts
+	  Referenced via 'stream/web.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/string_decoder.d.ts
+	  Referenced via 'string_decoder.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/test.d.ts
+	  Referenced via 'test.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/timers.d.ts
+	  Referenced via 'timers.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/timers/promises.d.ts
+	  Referenced via 'timers/promises.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/tls.d.ts
+	  Referenced via 'tls.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/trace_events.d.ts
+	  Referenced via 'trace_events.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/tty.d.ts
+	  Referenced via 'tty.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/url.d.ts
+	  Referenced via 'url.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/util.d.ts
+	  Referenced via 'util.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/v8.d.ts
+	  Referenced via 'v8.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/vm.d.ts
+	  Referenced via 'vm.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/wasi.d.ts
+	  Referenced via 'wasi.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/worker_threads.d.ts
+	  Referenced via 'worker_threads.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/zlib.d.ts
+	  Referenced via 'zlib.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/globals.global.d.ts
+	  Referenced via 'globals.global.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/index.d.ts
+	  Type library referenced via 'node' from file 'node_modules/@types/graceful-fs/index.d.ts' with packageId '@types/node/index.d.ts@18.14.6'
+	node_modules/@types/graceful-fs/index.d.ts
+	  Entry point for implicit type library 'graceful-fs' with packageId '@types/graceful-fs/index.d.ts@4.1.6'
+	node_modules/@types/istanbul-lib-coverage/index.d.ts
+	  Entry point for implicit type library 'istanbul-lib-coverage' with packageId '@types/istanbul-lib-coverage/index.d.ts@2.0.4'
+	  Imported via 'istanbul-lib-coverage' from file 'node_modules/@types/istanbul-lib-report/index.d.ts' with packageId '@types/istanbul-lib-coverage/index.d.ts@2.0.4'
+	node_modules/@types/istanbul-lib-report/index.d.ts
+	  Entry point for implicit type library 'istanbul-lib-report' with packageId '@types/istanbul-lib-report/index.d.ts@3.0.0'
+	  Imported via 'istanbul-lib-report' from file 'node_modules/@types/istanbul-reports/index.d.ts' with packageId '@types/istanbul-lib-report/index.d.ts@3.0.0'
+	node_modules/@types/istanbul-reports/index.d.ts
+	  Entry point for implicit type library 'istanbul-reports' with packageId '@types/istanbul-reports/index.d.ts@3.0.1'
+	node_modules/@jest/expect-utils/build/index.d.ts
+	  Imported via '@jest/expect-utils' from file 'node_modules/expect/build/index.d.ts' with packageId '@jest/expect-utils/build/index.d.ts@29.5.0'
+	  Imported via '@jest/expect-utils' from file 'node_modules/expect/build/index.d.ts' with packageId '@jest/expect-utils/build/index.d.ts@29.5.0'
+	  Imported via '@jest/expect-utils' from file 'node_modules/expect/build/index.d.ts' with packageId '@jest/expect-utils/build/index.d.ts@29.5.0'
+	node_modules/chalk/index.d.ts
+	  Imported via 'chalk' from file 'node_modules/jest-matcher-utils/build/index.d.ts' with packageId 'chalk/index.d.ts@4.1.2'
+	node_modules/@sinclair/typebox/typebox.d.ts
+	  Imported via '@sinclair/typebox' from file 'node_modules/@jest/schemas/build/index.d.ts' with packageId '@sinclair/typebox/typebox.d.ts@0.25.24'
+	  Imported via '@sinclair/typebox' from file 'node_modules/@jest/schemas/build/index.d.ts' with packageId '@sinclair/typebox/typebox.d.ts@0.25.24'
+	  Imported via '@sinclair/typebox' from file 'node_modules/@jest/schemas/build/index.d.ts' with packageId '@sinclair/typebox/typebox.d.ts@0.25.24'
+	  Imported via '@sinclair/typebox' from file 'node_modules/@jest/schemas/build/index.d.ts' with packageId '@sinclair/typebox/typebox.d.ts@0.25.24'
+	  Imported via '@sinclair/typebox' from file 'node_modules/@jest/schemas/build/index.d.ts' with packageId '@sinclair/typebox/typebox.d.ts@0.25.24'
+	  Imported via '@sinclair/typebox' from file 'node_modules/@jest/schemas/build/index.d.ts' with packageId '@sinclair/typebox/typebox.d.ts@0.25.24'
+	  Imported via '@sinclair/typebox' from file 'node_modules/@jest/schemas/build/index.d.ts' with packageId '@sinclair/typebox/typebox.d.ts@0.25.24'
+	  Imported via '@sinclair/typebox' from file 'node_modules/@jest/schemas/build/index.d.ts' with packageId '@sinclair/typebox/typebox.d.ts@0.25.24'
+	node_modules/@jest/schemas/build/index.d.ts
+	  Imported via '@jest/schemas' from file 'node_modules/pretty-format/build/index.d.ts' with packageId '@jest/schemas/build/index.d.ts@29.4.3'
+	node_modules/pretty-format/build/index.d.ts
+	  Imported via 'pretty-format' from file 'node_modules/jest-diff/build/index.d.ts' with packageId 'pretty-format/build/index.d.ts@29.5.0'
+	  Imported via 'pretty-format' from file 'node_modules/@types/jest/index.d.ts' with packageId 'pretty-format/build/index.d.ts@29.5.0'
+	node_modules/jest-diff/build/index.d.ts
+	  Imported via 'jest-diff' from file 'node_modules/jest-matcher-utils/build/index.d.ts' with packageId 'jest-diff/build/index.d.ts@29.5.0'
+	node_modules/jest-matcher-utils/build/index.d.ts
+	  Imported via 'jest-matcher-utils' from file 'node_modules/expect/build/index.d.ts' with packageId 'jest-matcher-utils/build/index.d.ts@29.5.0'
+	node_modules/expect/build/index.d.ts
+	  Imported via 'expect' from file 'node_modules/@types/jest/index.d.ts' with packageId 'expect/build/index.d.ts@29.5.0'
+	  Imported via 'expect' from file 'node_modules/@types/jest/index.d.ts' with packageId 'expect/build/index.d.ts@29.5.0'
+	node_modules/@types/jest/index.d.ts
+	  Entry point for implicit type library 'jest' with packageId '@types/jest/index.d.ts@29.4.0'
+	node_modules/@types/json-schema/index.d.ts
+	  Entry point for implicit type library 'json-schema' with packageId '@types/json-schema/index.d.ts@7.0.11'
+	node_modules/@types/minimatch/index.d.ts
+	  Entry point for implicit type library 'minimatch' with packageId '@types/minimatch/index.d.ts@3.0.5'
+	node_modules/@types/prettier/index.d.ts
+	  Entry point for implicit type library 'prettier' with packageId '@types/prettier/index.d.ts@2.7.2'
+	node_modules/@types/semver/classes/semver.d.ts
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/parse.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/valid.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/inc.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/diff.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/major.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/minor.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/patch.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/prerelease.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/compare.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/rcompare.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/compare-loose.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/compare-build.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/sort.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/rsort.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/gt.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/lt.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/eq.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/neq.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/gte.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/lte.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/cmp.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/coerce.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via './semver' from file 'node_modules/@types/semver/classes/comparator.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via './semver' from file 'node_modules/@types/semver/classes/range.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/satisfies.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/ranges/max-satisfying.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/ranges/min-satisfying.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/ranges/min-version.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/ranges/outside.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/ranges/gtr.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/ranges/ltr.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via './classes/semver' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	node_modules/@types/semver/functions/parse.d.ts
+	  Imported via './functions/parse' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/parse.d.ts@7.3.13'
+	node_modules/@types/semver/functions/valid.d.ts
+	  Imported via './functions/valid' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/valid.d.ts@7.3.13'
+	node_modules/@types/semver/functions/clean.d.ts
+	  Imported via './functions/clean' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/clean.d.ts@7.3.13'
+	node_modules/@types/semver/functions/inc.d.ts
+	  Imported via './functions/inc' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/inc.d.ts@7.3.13'
+	node_modules/@types/semver/functions/diff.d.ts
+	  Imported via './functions/diff' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/diff.d.ts@7.3.13'
+	node_modules/@types/semver/functions/major.d.ts
+	  Imported via './functions/major' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/major.d.ts@7.3.13'
+	node_modules/@types/semver/functions/minor.d.ts
+	  Imported via './functions/minor' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/minor.d.ts@7.3.13'
+	node_modules/@types/semver/functions/patch.d.ts
+	  Imported via './functions/patch' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/patch.d.ts@7.3.13'
+	node_modules/@types/semver/functions/prerelease.d.ts
+	  Imported via './functions/prerelease' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/prerelease.d.ts@7.3.13'
+	node_modules/@types/semver/functions/compare.d.ts
+	  Imported via './functions/compare' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/compare.d.ts@7.3.13'
+	node_modules/@types/semver/functions/rcompare.d.ts
+	  Imported via './functions/rcompare' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/rcompare.d.ts@7.3.13'
+	node_modules/@types/semver/functions/compare-loose.d.ts
+	  Imported via './functions/compare-loose' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/compare-loose.d.ts@7.3.13'
+	node_modules/@types/semver/functions/compare-build.d.ts
+	  Imported via './functions/compare-build' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/compare-build.d.ts@7.3.13'
+	node_modules/@types/semver/functions/sort.d.ts
+	  Imported via './functions/sort' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/sort.d.ts@7.3.13'
+	node_modules/@types/semver/functions/rsort.d.ts
+	  Imported via './functions/rsort' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/rsort.d.ts@7.3.13'
+	node_modules/@types/semver/functions/gt.d.ts
+	  Imported via './functions/gt' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/gt.d.ts@7.3.13'
+	node_modules/@types/semver/functions/lt.d.ts
+	  Imported via './functions/lt' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/lt.d.ts@7.3.13'
+	node_modules/@types/semver/functions/eq.d.ts
+	  Imported via './functions/eq' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/eq.d.ts@7.3.13'
+	node_modules/@types/semver/functions/neq.d.ts
+	  Imported via './functions/neq' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/neq.d.ts@7.3.13'
+	node_modules/@types/semver/functions/gte.d.ts
+	  Imported via './functions/gte' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/gte.d.ts@7.3.13'
+	node_modules/@types/semver/functions/lte.d.ts
+	  Imported via './functions/lte' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/lte.d.ts@7.3.13'
+	node_modules/@types/semver/functions/cmp.d.ts
+	  Imported via './functions/cmp' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/cmp.d.ts@7.3.13'
+	node_modules/@types/semver/functions/coerce.d.ts
+	  Imported via './functions/coerce' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/coerce.d.ts@7.3.13'
+	node_modules/@types/semver/classes/comparator.d.ts
+	  Imported via './comparator' from file 'node_modules/@types/semver/classes/range.d.ts' with packageId '@types/semver/classes/comparator.d.ts@7.3.13'
+	  Imported via './classes/comparator' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/classes/comparator.d.ts@7.3.13'
+	node_modules/@types/semver/classes/range.d.ts
+	  Imported via '../classes/range' from file 'node_modules/@types/semver/functions/satisfies.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	  Imported via '../classes/range' from file 'node_modules/@types/semver/ranges/max-satisfying.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	  Imported via '../classes/range' from file 'node_modules/@types/semver/ranges/min-satisfying.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	  Imported via '../classes/range' from file 'node_modules/@types/semver/ranges/to-comparators.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	  Imported via '../classes/range' from file 'node_modules/@types/semver/ranges/min-version.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	  Imported via '../classes/range' from file 'node_modules/@types/semver/ranges/valid.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	  Imported via '../classes/range' from file 'node_modules/@types/semver/ranges/outside.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	  Imported via '../classes/range' from file 'node_modules/@types/semver/ranges/gtr.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	  Imported via '../classes/range' from file 'node_modules/@types/semver/ranges/ltr.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	  Imported via '../classes/range' from file 'node_modules/@types/semver/ranges/intersects.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	  Imported via '../classes/range' from file 'node_modules/@types/semver/ranges/simplify.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	  Imported via '../classes/range' from file 'node_modules/@types/semver/ranges/subset.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	  Imported via './classes/range' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	node_modules/@types/semver/functions/satisfies.d.ts
+	  Imported via './functions/satisfies' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/satisfies.d.ts@7.3.13'
+	node_modules/@types/semver/ranges/max-satisfying.d.ts
+	  Imported via './ranges/max-satisfying' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/ranges/max-satisfying.d.ts@7.3.13'
+	node_modules/@types/semver/ranges/min-satisfying.d.ts
+	  Imported via './ranges/min-satisfying' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/ranges/min-satisfying.d.ts@7.3.13'
+	node_modules/@types/semver/ranges/to-comparators.d.ts
+	  Imported via './ranges/to-comparators' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/ranges/to-comparators.d.ts@7.3.13'
+	node_modules/@types/semver/ranges/min-version.d.ts
+	  Imported via './ranges/min-version' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/ranges/min-version.d.ts@7.3.13'
+	node_modules/@types/semver/ranges/valid.d.ts
+	  Imported via './ranges/valid' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/ranges/valid.d.ts@7.3.13'
+	node_modules/@types/semver/ranges/outside.d.ts
+	  Imported via './ranges/outside' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/ranges/outside.d.ts@7.3.13'
+	node_modules/@types/semver/ranges/gtr.d.ts
+	  Imported via './ranges/gtr' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/ranges/gtr.d.ts@7.3.13'
+	node_modules/@types/semver/ranges/ltr.d.ts
+	  Imported via './ranges/ltr' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/ranges/ltr.d.ts@7.3.13'
+	node_modules/@types/semver/ranges/intersects.d.ts
+	  Imported via './ranges/intersects' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/ranges/intersects.d.ts@7.3.13'
+	node_modules/@types/semver/ranges/simplify.d.ts
+	  Imported via './ranges/simplify' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/ranges/simplify.d.ts@7.3.13'
+	node_modules/@types/semver/ranges/subset.d.ts
+	  Imported via './ranges/subset' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/ranges/subset.d.ts@7.3.13'
+	node_modules/@types/semver/internals/identifiers.d.ts
+	  Imported via './internals/identifiers' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/internals/identifiers.d.ts@7.3.13'
+	node_modules/@types/semver/index.d.ts
+	  Entry point for implicit type library 'semver' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/classes/semver.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/parse.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/valid.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/clean.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/inc.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/diff.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/major.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/minor.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/patch.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/prerelease.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/compare.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/rcompare.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/compare-build.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/sort.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/rsort.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/gt.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/lt.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/eq.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/neq.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/gte.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/lte.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/cmp.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/coerce.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/classes/range.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/classes/comparator.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/satisfies.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/ranges/max-satisfying.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/ranges/min-satisfying.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/ranges/to-comparators.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/ranges/min-version.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/ranges/valid.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/ranges/outside.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/ranges/gtr.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/ranges/ltr.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/ranges/intersects.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/ranges/simplify.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/ranges/subset.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	node_modules/@types/stack-utils/index.d.ts
+	  Entry point for implicit type library 'stack-utils' with packageId '@types/stack-utils/index.d.ts@2.0.1'
+	node_modules/@types/yargs-parser/index.d.ts
+	  Imported via 'yargs-parser' from file 'node_modules/@types/yargs/index.d.ts' with packageId '@types/yargs-parser/index.d.ts@21.0.0'
+	  Entry point for implicit type library 'yargs-parser' with packageId '@types/yargs-parser/index.d.ts@21.0.0'
+	node_modules/@types/yargs/index.d.ts
+	  Entry point for implicit type library 'yargs' with packageId '@types/yargs/index.d.ts@17.0.22'
+
+Info 73   [15:52:25.360] -----------------------------------------------
+Info 74   [15:52:25.368] event:
+    {"seq":0,"type":"event","event":"projectLoadingFinish","body":{"projectName":"/home/jfl/projects/jest-custom/tsconfig.json"}}
+Info 75   [15:52:25.370] event:
+    {"seq":0,"type":"event","event":"telemetry","body":{"telemetryEventName":"projectInfo","payload":{"projectId":"73564d5b7414393c64ef9495c1825384c2f7bbb9270907d70e6d289bd74d863e","fileStats":{"js":0,"jsSize":0,"jsx":0,"jsxSize":0,"ts":1,"tsSize":56,"tsx":0,"tsxSize":0,"dts":166,"dtsSize":4059918,"deferred":0,"deferredSize":0},"compilerOptions":{"target":"es6","module":"commonjs","rootDir":"","resolveJsonModule":true,"sourceMap":true,"outDir":"","esModuleInterop":true,"forceConsistentCasingInFileNames":true,"strict":true,"skipLibCheck":true,"typeRoots":["",""]},"typeAcquisition":{"enable":false,"include":false,"exclude":false},"extends":false,"files":false,"include":true,"exclude":true,"compileOnSave":false,"configFileName":"tsconfig.json","projectType":"configured","languageServiceEnabled":true,"version":"4.9.5"}}}
+Info 76   [15:52:25.371] event:
+    {"seq":0,"type":"event","event":"configFileDiag","body":{"triggerFile":"/home/jfl/projects/jest-custom/tests/index.test.ts","configFile":"/home/jfl/projects/jest-custom/tsconfig.json","diagnostics":[]}}
+Info 77   [15:52:25.372] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/tests/tsconfig.json 2000 undefined WatchType: Config file for the inferred project root
+Info 78   [15:52:25.372] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/tests/jsconfig.json 2000 undefined WatchType: Config file for the inferred project root
+Info 79   [15:52:25.372] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/jsconfig.json 2000 undefined WatchType: Config file for the inferred project root
+Info 80   [15:52:25.373] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 81   [15:52:25.376] DirectoryWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/src 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 82   [15:52:25.376] Elapsed:: 0.0082930326461792ms DirectoryWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/src 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 83   [15:52:25.376] DirectoryWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom 0 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 84   [15:52:25.376] Elapsed:: 0.058371901512145996ms DirectoryWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom 0 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 85   [15:52:25.728] DirectoryWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 86   [15:52:25.728] Elapsed:: 0.012462973594665527ms DirectoryWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules 1 undefined Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 87   [15:52:25.728] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/semver/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 88   [15:52:26.008] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/babel__core/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 89   [15:52:26.008] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/babel__generator/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 90   [15:52:26.008] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/babel__template/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 91   [15:52:26.008] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/babel__traverse/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 92   [15:52:26.008] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/graceful-fs/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 93   [15:52:26.008] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/istanbul-lib-coverage/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 94   [15:52:26.009] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/istanbul-lib-coverage/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 95   [15:52:26.009] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/istanbul-lib-report/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 96   [15:52:26.009] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/istanbul-lib-report/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 97   [15:52:26.009] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/istanbul-reports/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 98   [15:52:26.009] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/jest/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 99   [15:52:26.009] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/json-schema/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 100  [15:52:26.009] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/minimatch/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 101  [15:52:26.009] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/node/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 102  [15:52:26.009] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/prettier/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 103  [15:52:26.009] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/stack-utils/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 104  [15:52:26.009] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/yargs/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 105  [15:52:26.009] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types/yargs-parser/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 106  [15:52:26.009] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/yargs-parser/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 107  [15:52:26.010] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@babel/generator/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 108  [15:52:26.010] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@babel/parser/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 109  [15:52:26.010] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@babel/template/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 110  [15:52:26.010] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@babel/traverse/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 111  [15:52:26.011] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@babel/types/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 112  [15:52:26.011] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/expect/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 113  [15:52:26.011] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/pretty-format/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 114  [15:52:26.012] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@jest/expect-utils/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 115  [15:52:26.012] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/jest-matcher-utils/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 116  [15:52:26.012] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/chalk/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 117  [15:52:26.012] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/jest-diff/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 118  [15:52:26.012] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@jest/schemas/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 119  [15:52:26.013] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@sinclair/typebox/package.json 2000 undefined Project: /dev/null/inferredProject1* WatchType: File location affecting resolution
+Info 120  [15:52:26.013] DirectoryWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types 1 undefined Project: /dev/null/inferredProject1* WatchType: Type roots
+Info 121  [15:52:26.013] Elapsed:: 0.010541915893554688ms DirectoryWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/node_modules/@types 1 undefined Project: /dev/null/inferredProject1* WatchType: Type roots
+Info 122  [15:52:26.013] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 1 structureChanged: true structureIsReused:: Not Elapsed: 640.4817689657211ms
+Info 123  [15:52:26.013] Project '/dev/null/inferredProject1*' (Inferred)
+Info 124  [15:52:26.019] 	Files (167)
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es5.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2015.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2016.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2017.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2018.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2019.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2020.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.dom.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.dom.iterable.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.webworker.importscripts.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.scripthost.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2015.core.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2015.collection.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2015.generator.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2015.iterable.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2015.promise.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2015.proxy.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2015.reflect.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2015.symbol.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2016.array.include.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2017.object.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2017.string.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2017.intl.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2018.asynciterable.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2018.intl.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2018.promise.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2018.regexp.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2019.array.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2019.object.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2019.string.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2019.symbol.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2019.intl.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2020.bigint.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2020.date.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2020.promise.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2020.sharedmemory.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2020.string.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2020.symbol.wellknown.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2020.intl.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2020.number.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.esnext.intl.d.ts
+	/home/jfl/projects/jest-custom/node_modules/typescript/lib/lib.es2020.full.d.ts
+	/home/jfl/projects/jest-custom/src/index.ts
+	/home/jfl/projects/jest-custom/tests/index.test.ts
+	/home/jfl/projects/jest-custom/node_modules/@babel/types/lib/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/babel__generator/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@babel/parser/typings/babel-parser.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/babel__template/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/babel__traverse/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/babel__core/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/assert.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/assert/strict.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/globals.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/async_hooks.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/buffer.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/child_process.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/cluster.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/console.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/constants.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/crypto.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/dgram.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/diagnostics_channel.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/dns.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/dns/promises.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/domain.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/dom-events.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/events.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/fs.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/fs/promises.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/http.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/http2.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/https.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/inspector.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/module.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/net.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/os.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/path.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/perf_hooks.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/process.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/punycode.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/querystring.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/readline.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/readline/promises.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/repl.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/stream.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/stream/promises.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/stream/consumers.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/stream/web.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/string_decoder.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/test.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/timers.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/timers/promises.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/tls.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/trace_events.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/tty.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/url.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/util.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/v8.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/vm.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/wasi.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/worker_threads.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/zlib.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/globals.global.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/node/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/graceful-fs/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/istanbul-lib-coverage/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/istanbul-lib-report/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/istanbul-reports/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@jest/expect-utils/build/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/chalk/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@sinclair/typebox/typebox.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@jest/schemas/build/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/pretty-format/build/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/jest-diff/build/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/jest-matcher-utils/build/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/expect/build/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/jest/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/json-schema/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/minimatch/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/prettier/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/classes/semver.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/parse.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/valid.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/clean.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/inc.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/diff.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/major.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/minor.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/patch.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/prerelease.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/compare.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/rcompare.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/compare-loose.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/compare-build.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/sort.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/rsort.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/gt.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/lt.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/eq.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/neq.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/gte.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/lte.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/cmp.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/coerce.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/classes/comparator.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/classes/range.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/functions/satisfies.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/ranges/max-satisfying.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/ranges/min-satisfying.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/ranges/to-comparators.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/ranges/min-version.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/ranges/valid.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/ranges/outside.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/ranges/gtr.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/ranges/ltr.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/ranges/intersects.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/ranges/simplify.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/ranges/subset.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/internals/identifiers.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/semver/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/stack-utils/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/yargs-parser/index.d.ts
+	/home/jfl/projects/jest-custom/node_modules/@types/yargs/index.d.ts
+
+
+	node_modules/typescript/lib/lib.es5.d.ts
+	  Library referenced via 'es5' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	  Library referenced via 'es5' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	node_modules/typescript/lib/lib.es2015.d.ts
+	  Library referenced via 'es2015' from file 'node_modules/typescript/lib/lib.es2016.d.ts'
+	  Library referenced via 'es2015' from file 'node_modules/typescript/lib/lib.es2016.d.ts'
+	node_modules/typescript/lib/lib.es2016.d.ts
+	  Library referenced via 'es2016' from file 'node_modules/typescript/lib/lib.es2017.d.ts'
+	  Library referenced via 'es2016' from file 'node_modules/typescript/lib/lib.es2017.d.ts'
+	node_modules/typescript/lib/lib.es2017.d.ts
+	  Library referenced via 'es2017' from file 'node_modules/typescript/lib/lib.es2018.d.ts'
+	  Library referenced via 'es2017' from file 'node_modules/typescript/lib/lib.es2018.d.ts'
+	node_modules/typescript/lib/lib.es2018.d.ts
+	  Library referenced via 'es2018' from file 'node_modules/typescript/lib/lib.es2019.d.ts'
+	  Library referenced via 'es2018' from file 'node_modules/typescript/lib/lib.es2019.d.ts'
+	node_modules/typescript/lib/lib.es2019.d.ts
+	  Library referenced via 'es2019' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	  Library referenced via 'es2019' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	node_modules/typescript/lib/lib.es2020.d.ts
+	  Library referenced via 'es2020' from file 'node_modules/@types/node/index.d.ts'
+	  Library referenced via 'es2020' from file 'node_modules/typescript/lib/lib.es2020.full.d.ts'
+	node_modules/typescript/lib/lib.dom.d.ts
+	  Library referenced via 'dom' from file 'node_modules/typescript/lib/lib.es2020.full.d.ts'
+	node_modules/typescript/lib/lib.dom.iterable.d.ts
+	  Library referenced via 'dom.iterable' from file 'node_modules/typescript/lib/lib.es2020.full.d.ts'
+	node_modules/typescript/lib/lib.webworker.importscripts.d.ts
+	  Library referenced via 'webworker.importscripts' from file 'node_modules/typescript/lib/lib.es2020.full.d.ts'
+	node_modules/typescript/lib/lib.scripthost.d.ts
+	  Library referenced via 'scripthost' from file 'node_modules/typescript/lib/lib.es2020.full.d.ts'
+	node_modules/typescript/lib/lib.es2015.core.d.ts
+	  Library referenced via 'es2015.core' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	  Library referenced via 'es2015.core' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	node_modules/typescript/lib/lib.es2015.collection.d.ts
+	  Library referenced via 'es2015.collection' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	  Library referenced via 'es2015.collection' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	node_modules/typescript/lib/lib.es2015.generator.d.ts
+	  Library referenced via 'es2015.generator' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	  Library referenced via 'es2015.generator' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	node_modules/typescript/lib/lib.es2015.iterable.d.ts
+	  Library referenced via 'es2015.iterable' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	  Library referenced via 'es2015.iterable' from file 'node_modules/typescript/lib/lib.es2015.generator.d.ts'
+	  Library referenced via 'es2015.iterable' from file 'node_modules/typescript/lib/lib.es2018.asynciterable.d.ts'
+	  Library referenced via 'es2015.iterable' from file 'node_modules/typescript/lib/lib.es2019.object.d.ts'
+	  Library referenced via 'es2015.iterable' from file 'node_modules/typescript/lib/lib.es2020.string.d.ts'
+	  Library referenced via 'es2015.iterable' from file 'node_modules/typescript/lib/lib.es2020.symbol.wellknown.d.ts'
+	  Library referenced via 'es2015.iterable' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	  Library referenced via 'es2015.iterable' from file 'node_modules/typescript/lib/lib.es2015.generator.d.ts'
+	  Library referenced via 'es2015.iterable' from file 'node_modules/typescript/lib/lib.es2018.asynciterable.d.ts'
+	  Library referenced via 'es2015.iterable' from file 'node_modules/typescript/lib/lib.es2019.object.d.ts'
+	  Library referenced via 'es2015.iterable' from file 'node_modules/typescript/lib/lib.es2020.string.d.ts'
+	  Library referenced via 'es2015.iterable' from file 'node_modules/typescript/lib/lib.es2020.symbol.wellknown.d.ts'
+	node_modules/typescript/lib/lib.es2015.promise.d.ts
+	  Library referenced via 'es2015.promise' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	  Library referenced via 'es2015.promise' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	node_modules/typescript/lib/lib.es2015.proxy.d.ts
+	  Library referenced via 'es2015.proxy' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	  Library referenced via 'es2015.proxy' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	node_modules/typescript/lib/lib.es2015.reflect.d.ts
+	  Library referenced via 'es2015.reflect' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	  Library referenced via 'es2015.reflect' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	node_modules/typescript/lib/lib.es2015.symbol.d.ts
+	  Library referenced via 'es2015.symbol' from file 'node_modules/typescript/lib/lib.es2015.iterable.d.ts'
+	  Library referenced via 'es2015.symbol' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	  Library referenced via 'es2015.symbol' from file 'node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts'
+	  Library referenced via 'es2015.symbol' from file 'node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts'
+	  Library referenced via 'es2015.symbol' from file 'node_modules/typescript/lib/lib.es2018.asynciterable.d.ts'
+	  Library referenced via 'es2015.symbol' from file 'node_modules/typescript/lib/lib.es2020.symbol.wellknown.d.ts'
+	  Library referenced via 'es2015.symbol' from file 'node_modules/typescript/lib/lib.es2015.iterable.d.ts'
+	  Library referenced via 'es2015.symbol' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	  Library referenced via 'es2015.symbol' from file 'node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts'
+	  Library referenced via 'es2015.symbol' from file 'node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts'
+	  Library referenced via 'es2015.symbol' from file 'node_modules/typescript/lib/lib.es2018.asynciterable.d.ts'
+	  Library referenced via 'es2015.symbol' from file 'node_modules/typescript/lib/lib.es2020.symbol.wellknown.d.ts'
+	node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts
+	  Library referenced via 'es2015.symbol.wellknown' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	  Library referenced via 'es2015.symbol.wellknown' from file 'node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts'
+	  Library referenced via 'es2015.symbol.wellknown' from file 'node_modules/typescript/lib/lib.es2015.d.ts'
+	  Library referenced via 'es2015.symbol.wellknown' from file 'node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts'
+	node_modules/typescript/lib/lib.es2016.array.include.d.ts
+	  Library referenced via 'es2016.array.include' from file 'node_modules/typescript/lib/lib.es2016.d.ts'
+	  Library referenced via 'es2016.array.include' from file 'node_modules/typescript/lib/lib.es2016.d.ts'
+	node_modules/typescript/lib/lib.es2017.object.d.ts
+	  Library referenced via 'es2017.object' from file 'node_modules/typescript/lib/lib.es2017.d.ts'
+	  Library referenced via 'es2017.object' from file 'node_modules/typescript/lib/lib.es2017.d.ts'
+	node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts
+	  Library referenced via 'es2017.sharedmemory' from file 'node_modules/typescript/lib/lib.es2017.d.ts'
+	  Library referenced via 'es2017.sharedmemory' from file 'node_modules/typescript/lib/lib.es2017.d.ts'
+	node_modules/typescript/lib/lib.es2017.string.d.ts
+	  Library referenced via 'es2017.string' from file 'node_modules/typescript/lib/lib.es2017.d.ts'
+	  Library referenced via 'es2017.string' from file 'node_modules/typescript/lib/lib.es2017.d.ts'
+	node_modules/typescript/lib/lib.es2017.intl.d.ts
+	  Library referenced via 'es2017.intl' from file 'node_modules/typescript/lib/lib.es2017.d.ts'
+	  Library referenced via 'es2017.intl' from file 'node_modules/typescript/lib/lib.es2017.d.ts'
+	node_modules/typescript/lib/lib.es2017.typedarrays.d.ts
+	  Library referenced via 'es2017.typedarrays' from file 'node_modules/typescript/lib/lib.es2017.d.ts'
+	  Library referenced via 'es2017.typedarrays' from file 'node_modules/typescript/lib/lib.es2017.d.ts'
+	node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts
+	  Library referenced via 'es2018.asyncgenerator' from file 'node_modules/typescript/lib/lib.es2018.d.ts'
+	  Library referenced via 'es2018.asyncgenerator' from file 'node_modules/typescript/lib/lib.es2018.d.ts'
+	node_modules/typescript/lib/lib.es2018.asynciterable.d.ts
+	  Library referenced via 'es2018.asynciterable' from file 'node_modules/typescript/lib/lib.es2018.d.ts'
+	  Library referenced via 'es2018.asynciterable' from file 'node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts'
+	  Library referenced via 'esnext.asynciterable' from file 'node_modules/@types/node/index.d.ts'
+	  Library referenced via 'es2018.asynciterable' from file 'node_modules/typescript/lib/lib.es2018.d.ts'
+	  Library referenced via 'es2018.asynciterable' from file 'node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts'
+	node_modules/typescript/lib/lib.es2018.intl.d.ts
+	  Library referenced via 'es2018.intl' from file 'node_modules/typescript/lib/lib.es2018.d.ts'
+	  Library referenced via 'es2018.intl' from file 'node_modules/typescript/lib/lib.es2020.intl.d.ts'
+	  Library referenced via 'es2018.intl' from file 'node_modules/typescript/lib/lib.es2018.d.ts'
+	  Library referenced via 'es2018.intl' from file 'node_modules/typescript/lib/lib.es2020.intl.d.ts'
+	node_modules/typescript/lib/lib.es2018.promise.d.ts
+	  Library referenced via 'es2018.promise' from file 'node_modules/typescript/lib/lib.es2018.d.ts'
+	  Library referenced via 'es2018.promise' from file 'node_modules/typescript/lib/lib.es2018.d.ts'
+	node_modules/typescript/lib/lib.es2018.regexp.d.ts
+	  Library referenced via 'es2018.regexp' from file 'node_modules/typescript/lib/lib.es2018.d.ts'
+	  Library referenced via 'es2018.regexp' from file 'node_modules/typescript/lib/lib.es2018.d.ts'
+	node_modules/typescript/lib/lib.es2019.array.d.ts
+	  Library referenced via 'es2019.array' from file 'node_modules/typescript/lib/lib.es2019.d.ts'
+	  Library referenced via 'es2019.array' from file 'node_modules/typescript/lib/lib.es2019.d.ts'
+	node_modules/typescript/lib/lib.es2019.object.d.ts
+	  Library referenced via 'es2019.object' from file 'node_modules/typescript/lib/lib.es2019.d.ts'
+	  Library referenced via 'es2019.object' from file 'node_modules/typescript/lib/lib.es2019.d.ts'
+	node_modules/typescript/lib/lib.es2019.string.d.ts
+	  Library referenced via 'es2019.string' from file 'node_modules/typescript/lib/lib.es2019.d.ts'
+	  Library referenced via 'es2019.string' from file 'node_modules/typescript/lib/lib.es2019.d.ts'
+	node_modules/typescript/lib/lib.es2019.symbol.d.ts
+	  Library referenced via 'es2019.symbol' from file 'node_modules/typescript/lib/lib.es2019.d.ts'
+	  Library referenced via 'es2019.symbol' from file 'node_modules/typescript/lib/lib.es2019.d.ts'
+	node_modules/typescript/lib/lib.es2019.intl.d.ts
+	  Library referenced via 'es2019.intl' from file 'node_modules/typescript/lib/lib.es2019.d.ts'
+	  Library referenced via 'es2019.intl' from file 'node_modules/typescript/lib/lib.es2019.d.ts'
+	node_modules/typescript/lib/lib.es2020.bigint.d.ts
+	  Library referenced via 'es2020.bigint' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	  Library referenced via 'esnext.bigint' from file 'node_modules/@types/node/index.d.ts'
+	  Library referenced via 'es2020.bigint' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	node_modules/typescript/lib/lib.es2020.date.d.ts
+	  Library referenced via 'es2020.date' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	  Library referenced via 'es2020.date' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	node_modules/typescript/lib/lib.es2020.promise.d.ts
+	  Library referenced via 'es2020.promise' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	  Library referenced via 'es2020.promise' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	node_modules/typescript/lib/lib.es2020.sharedmemory.d.ts
+	  Library referenced via 'es2020.sharedmemory' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	  Library referenced via 'es2020.sharedmemory' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	node_modules/typescript/lib/lib.es2020.string.d.ts
+	  Library referenced via 'es2020.string' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	  Library referenced via 'es2020.string' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	node_modules/typescript/lib/lib.es2020.symbol.wellknown.d.ts
+	  Library referenced via 'es2020.symbol.wellknown' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	  Library referenced via 'es2020.symbol.wellknown' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	node_modules/typescript/lib/lib.es2020.intl.d.ts
+	  Library referenced via 'es2020.intl' from file 'node_modules/typescript/lib/lib.es2020.bigint.d.ts'
+	  Library referenced via 'es2020.intl' from file 'node_modules/typescript/lib/lib.es2020.date.d.ts'
+	  Library referenced via 'es2020.intl' from file 'node_modules/typescript/lib/lib.es2020.number.d.ts'
+	  Library referenced via 'es2020.intl' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	  Library referenced via 'es2020.intl' from file 'node_modules/typescript/lib/lib.es2020.bigint.d.ts'
+	  Library referenced via 'es2020.intl' from file 'node_modules/typescript/lib/lib.es2020.date.d.ts'
+	  Library referenced via 'es2020.intl' from file 'node_modules/typescript/lib/lib.es2020.number.d.ts'
+	  Library referenced via 'es2020.intl' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	node_modules/typescript/lib/lib.es2020.number.d.ts
+	  Library referenced via 'es2020.number' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	  Library referenced via 'es2020.number' from file 'node_modules/typescript/lib/lib.es2020.d.ts'
+	node_modules/typescript/lib/lib.esnext.intl.d.ts
+	  Library referenced via 'esnext.intl' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/typescript/lib/lib.es2020.full.d.ts
+	  Default library for target 'es2020'
+	src/index.ts
+	  Imported via "../src" from file 'tests/index.test.ts'
+	tests/index.test.ts
+	  Root file specified for compilation
+	node_modules/@babel/types/lib/index.d.ts
+	  Imported via '@babel/types' from file 'node_modules/@types/babel__generator/index.d.ts' with packageId '@babel/types/lib/index.d.ts@7.21.2'
+	  Imported via '@babel/types' from file 'node_modules/@babel/parser/typings/babel-parser.d.ts' with packageId '@babel/types/lib/index.d.ts@7.21.2'
+	  Imported via '@babel/types' from file 'node_modules/@types/babel__template/index.d.ts' with packageId '@babel/types/lib/index.d.ts@7.21.2'
+	  Imported via '@babel/types' from file 'node_modules/@types/babel__traverse/index.d.ts' with packageId '@babel/types/lib/index.d.ts@7.21.2'
+	  Imported via '@babel/types' from file 'node_modules/@types/babel__core/index.d.ts' with packageId '@babel/types/lib/index.d.ts@7.21.2'
+	node_modules/@types/babel__generator/index.d.ts
+	  Imported via '@babel/generator' from file 'node_modules/@types/babel__core/index.d.ts' with packageId '@types/babel__generator/index.d.ts@7.6.4'
+	  Entry point for implicit type library 'babel__generator' with packageId '@types/babel__generator/index.d.ts@7.6.4'
+	node_modules/@babel/parser/typings/babel-parser.d.ts
+	  Imported via '@babel/parser' from file 'node_modules/@types/babel__core/index.d.ts' with packageId '@babel/parser/typings/babel-parser.d.ts@7.21.2'
+	  Imported via '@babel/parser' from file 'node_modules/@types/babel__template/index.d.ts' with packageId '@babel/parser/typings/babel-parser.d.ts@7.21.2'
+	  Imported via '@babel/parser' from file 'node_modules/@types/babel__core/index.d.ts' with packageId '@babel/parser/typings/babel-parser.d.ts@7.21.2'
+	node_modules/@types/babel__template/index.d.ts
+	  Imported via '@babel/template' from file 'node_modules/@types/babel__core/index.d.ts' with packageId '@types/babel__template/index.d.ts@7.4.1'
+	  Entry point for implicit type library 'babel__template' with packageId '@types/babel__template/index.d.ts@7.4.1'
+	node_modules/@types/babel__traverse/index.d.ts
+	  Imported via '@babel/traverse' from file 'node_modules/@types/babel__core/index.d.ts' with packageId '@types/babel__traverse/index.d.ts@7.18.3'
+	  Entry point for implicit type library 'babel__traverse' with packageId '@types/babel__traverse/index.d.ts@7.18.3'
+	node_modules/@types/babel__core/index.d.ts
+	  Entry point for implicit type library 'babel__core' with packageId '@types/babel__core/index.d.ts@7.20.0'
+	node_modules/@types/node/assert.d.ts
+	  Referenced via 'assert.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/assert/strict.d.ts
+	  Referenced via 'assert/strict.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/globals.d.ts
+	  Referenced via 'globals.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/async_hooks.d.ts
+	  Referenced via 'async_hooks.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/buffer.d.ts
+	  Referenced via 'buffer.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/child_process.d.ts
+	  Referenced via 'child_process.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/cluster.d.ts
+	  Referenced via 'cluster.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/console.d.ts
+	  Referenced via 'console.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/constants.d.ts
+	  Referenced via 'constants.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/crypto.d.ts
+	  Referenced via 'crypto.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/dgram.d.ts
+	  Referenced via 'dgram.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/diagnostics_channel.d.ts
+	  Referenced via 'diagnostics_channel.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/dns.d.ts
+	  Referenced via 'dns.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/dns/promises.d.ts
+	  Referenced via 'dns/promises.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	  Referenced via 'dns/promises.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/domain.d.ts
+	  Referenced via 'domain.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/dom-events.d.ts
+	  Referenced via 'dom-events.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/events.d.ts
+	  Referenced via 'events.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/fs.d.ts
+	  Referenced via 'fs.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/fs/promises.d.ts
+	  Referenced via 'fs/promises.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/http.d.ts
+	  Referenced via 'http.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/http2.d.ts
+	  Referenced via 'http2.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/https.d.ts
+	  Referenced via 'https.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/inspector.d.ts
+	  Referenced via 'inspector.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/module.d.ts
+	  Referenced via 'module.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/net.d.ts
+	  Referenced via 'net.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/os.d.ts
+	  Referenced via 'os.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/path.d.ts
+	  Referenced via 'path.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/perf_hooks.d.ts
+	  Referenced via 'perf_hooks.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/process.d.ts
+	  Referenced via 'process.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/punycode.d.ts
+	  Referenced via 'punycode.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/querystring.d.ts
+	  Referenced via 'querystring.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/readline.d.ts
+	  Referenced via 'readline.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/readline/promises.d.ts
+	  Referenced via 'readline/promises.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/repl.d.ts
+	  Referenced via 'repl.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/stream.d.ts
+	  Referenced via 'stream.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/stream/promises.d.ts
+	  Referenced via 'stream/promises.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/stream/consumers.d.ts
+	  Referenced via 'stream/consumers.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/stream/web.d.ts
+	  Referenced via 'stream/web.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/string_decoder.d.ts
+	  Referenced via 'string_decoder.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/test.d.ts
+	  Referenced via 'test.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/timers.d.ts
+	  Referenced via 'timers.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/timers/promises.d.ts
+	  Referenced via 'timers/promises.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/tls.d.ts
+	  Referenced via 'tls.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/trace_events.d.ts
+	  Referenced via 'trace_events.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/tty.d.ts
+	  Referenced via 'tty.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/url.d.ts
+	  Referenced via 'url.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/util.d.ts
+	  Referenced via 'util.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/v8.d.ts
+	  Referenced via 'v8.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/vm.d.ts
+	  Referenced via 'vm.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/wasi.d.ts
+	  Referenced via 'wasi.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/worker_threads.d.ts
+	  Referenced via 'worker_threads.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/zlib.d.ts
+	  Referenced via 'zlib.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/globals.global.d.ts
+	  Referenced via 'globals.global.d.ts' from file 'node_modules/@types/node/index.d.ts'
+	node_modules/@types/node/index.d.ts
+	  Type library referenced via 'node' from file 'node_modules/@types/graceful-fs/index.d.ts' with packageId '@types/node/index.d.ts@18.14.6'
+	node_modules/@types/graceful-fs/index.d.ts
+	  Entry point for implicit type library 'graceful-fs' with packageId '@types/graceful-fs/index.d.ts@4.1.6'
+	node_modules/@types/istanbul-lib-coverage/index.d.ts
+	  Entry point for implicit type library 'istanbul-lib-coverage' with packageId '@types/istanbul-lib-coverage/index.d.ts@2.0.4'
+	  Imported via 'istanbul-lib-coverage' from file 'node_modules/@types/istanbul-lib-report/index.d.ts' with packageId '@types/istanbul-lib-coverage/index.d.ts@2.0.4'
+	node_modules/@types/istanbul-lib-report/index.d.ts
+	  Entry point for implicit type library 'istanbul-lib-report' with packageId '@types/istanbul-lib-report/index.d.ts@3.0.0'
+	  Imported via 'istanbul-lib-report' from file 'node_modules/@types/istanbul-reports/index.d.ts' with packageId '@types/istanbul-lib-report/index.d.ts@3.0.0'
+	node_modules/@types/istanbul-reports/index.d.ts
+	  Entry point for implicit type library 'istanbul-reports' with packageId '@types/istanbul-reports/index.d.ts@3.0.1'
+	node_modules/@jest/expect-utils/build/index.d.ts
+	  Imported via '@jest/expect-utils' from file 'node_modules/expect/build/index.d.ts' with packageId '@jest/expect-utils/build/index.d.ts@29.5.0'
+	  Imported via '@jest/expect-utils' from file 'node_modules/expect/build/index.d.ts' with packageId '@jest/expect-utils/build/index.d.ts@29.5.0'
+	  Imported via '@jest/expect-utils' from file 'node_modules/expect/build/index.d.ts' with packageId '@jest/expect-utils/build/index.d.ts@29.5.0'
+	node_modules/chalk/index.d.ts
+	  Imported via 'chalk' from file 'node_modules/jest-matcher-utils/build/index.d.ts' with packageId 'chalk/index.d.ts@4.1.2'
+	node_modules/@sinclair/typebox/typebox.d.ts
+	  Imported via '@sinclair/typebox' from file 'node_modules/@jest/schemas/build/index.d.ts' with packageId '@sinclair/typebox/typebox.d.ts@0.25.24'
+	  Imported via '@sinclair/typebox' from file 'node_modules/@jest/schemas/build/index.d.ts' with packageId '@sinclair/typebox/typebox.d.ts@0.25.24'
+	  Imported via '@sinclair/typebox' from file 'node_modules/@jest/schemas/build/index.d.ts' with packageId '@sinclair/typebox/typebox.d.ts@0.25.24'
+	  Imported via '@sinclair/typebox' from file 'node_modules/@jest/schemas/build/index.d.ts' with packageId '@sinclair/typebox/typebox.d.ts@0.25.24'
+	  Imported via '@sinclair/typebox' from file 'node_modules/@jest/schemas/build/index.d.ts' with packageId '@sinclair/typebox/typebox.d.ts@0.25.24'
+	  Imported via '@sinclair/typebox' from file 'node_modules/@jest/schemas/build/index.d.ts' with packageId '@sinclair/typebox/typebox.d.ts@0.25.24'
+	  Imported via '@sinclair/typebox' from file 'node_modules/@jest/schemas/build/index.d.ts' with packageId '@sinclair/typebox/typebox.d.ts@0.25.24'
+	  Imported via '@sinclair/typebox' from file 'node_modules/@jest/schemas/build/index.d.ts' with packageId '@sinclair/typebox/typebox.d.ts@0.25.24'
+	node_modules/@jest/schemas/build/index.d.ts
+	  Imported via '@jest/schemas' from file 'node_modules/pretty-format/build/index.d.ts' with packageId '@jest/schemas/build/index.d.ts@29.4.3'
+	node_modules/pretty-format/build/index.d.ts
+	  Imported via 'pretty-format' from file 'node_modules/jest-diff/build/index.d.ts' with packageId 'pretty-format/build/index.d.ts@29.5.0'
+	  Imported via 'pretty-format' from file 'node_modules/@types/jest/index.d.ts' with packageId 'pretty-format/build/index.d.ts@29.5.0'
+	node_modules/jest-diff/build/index.d.ts
+	  Imported via 'jest-diff' from file 'node_modules/jest-matcher-utils/build/index.d.ts' with packageId 'jest-diff/build/index.d.ts@29.5.0'
+	node_modules/jest-matcher-utils/build/index.d.ts
+	  Imported via 'jest-matcher-utils' from file 'node_modules/expect/build/index.d.ts' with packageId 'jest-matcher-utils/build/index.d.ts@29.5.0'
+	node_modules/expect/build/index.d.ts
+	  Imported via 'expect' from file 'node_modules/@types/jest/index.d.ts' with packageId 'expect/build/index.d.ts@29.5.0'
+	  Imported via 'expect' from file 'node_modules/@types/jest/index.d.ts' with packageId 'expect/build/index.d.ts@29.5.0'
+	node_modules/@types/jest/index.d.ts
+	  Entry point for implicit type library 'jest' with packageId '@types/jest/index.d.ts@29.4.0'
+	node_modules/@types/json-schema/index.d.ts
+	  Entry point for implicit type library 'json-schema' with packageId '@types/json-schema/index.d.ts@7.0.11'
+	node_modules/@types/minimatch/index.d.ts
+	  Entry point for implicit type library 'minimatch' with packageId '@types/minimatch/index.d.ts@3.0.5'
+	node_modules/@types/prettier/index.d.ts
+	  Entry point for implicit type library 'prettier' with packageId '@types/prettier/index.d.ts@2.7.2'
+	node_modules/@types/semver/classes/semver.d.ts
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/parse.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/valid.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/inc.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/diff.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/major.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/minor.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/patch.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/prerelease.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/compare.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/rcompare.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/compare-loose.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/compare-build.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/sort.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/rsort.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/gt.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/lt.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/eq.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/neq.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/gte.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/lte.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/cmp.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/coerce.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via './semver' from file 'node_modules/@types/semver/classes/comparator.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via './semver' from file 'node_modules/@types/semver/classes/range.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/functions/satisfies.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/ranges/max-satisfying.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/ranges/min-satisfying.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/ranges/min-version.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/ranges/outside.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/ranges/gtr.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via '../classes/semver' from file 'node_modules/@types/semver/ranges/ltr.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	  Imported via './classes/semver' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/classes/semver.d.ts@7.3.13'
+	node_modules/@types/semver/functions/parse.d.ts
+	  Imported via './functions/parse' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/parse.d.ts@7.3.13'
+	node_modules/@types/semver/functions/valid.d.ts
+	  Imported via './functions/valid' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/valid.d.ts@7.3.13'
+	node_modules/@types/semver/functions/clean.d.ts
+	  Imported via './functions/clean' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/clean.d.ts@7.3.13'
+	node_modules/@types/semver/functions/inc.d.ts
+	  Imported via './functions/inc' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/inc.d.ts@7.3.13'
+	node_modules/@types/semver/functions/diff.d.ts
+	  Imported via './functions/diff' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/diff.d.ts@7.3.13'
+	node_modules/@types/semver/functions/major.d.ts
+	  Imported via './functions/major' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/major.d.ts@7.3.13'
+	node_modules/@types/semver/functions/minor.d.ts
+	  Imported via './functions/minor' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/minor.d.ts@7.3.13'
+	node_modules/@types/semver/functions/patch.d.ts
+	  Imported via './functions/patch' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/patch.d.ts@7.3.13'
+	node_modules/@types/semver/functions/prerelease.d.ts
+	  Imported via './functions/prerelease' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/prerelease.d.ts@7.3.13'
+	node_modules/@types/semver/functions/compare.d.ts
+	  Imported via './functions/compare' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/compare.d.ts@7.3.13'
+	node_modules/@types/semver/functions/rcompare.d.ts
+	  Imported via './functions/rcompare' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/rcompare.d.ts@7.3.13'
+	node_modules/@types/semver/functions/compare-loose.d.ts
+	  Imported via './functions/compare-loose' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/compare-loose.d.ts@7.3.13'
+	node_modules/@types/semver/functions/compare-build.d.ts
+	  Imported via './functions/compare-build' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/compare-build.d.ts@7.3.13'
+	node_modules/@types/semver/functions/sort.d.ts
+	  Imported via './functions/sort' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/sort.d.ts@7.3.13'
+	node_modules/@types/semver/functions/rsort.d.ts
+	  Imported via './functions/rsort' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/rsort.d.ts@7.3.13'
+	node_modules/@types/semver/functions/gt.d.ts
+	  Imported via './functions/gt' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/gt.d.ts@7.3.13'
+	node_modules/@types/semver/functions/lt.d.ts
+	  Imported via './functions/lt' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/lt.d.ts@7.3.13'
+	node_modules/@types/semver/functions/eq.d.ts
+	  Imported via './functions/eq' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/eq.d.ts@7.3.13'
+	node_modules/@types/semver/functions/neq.d.ts
+	  Imported via './functions/neq' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/neq.d.ts@7.3.13'
+	node_modules/@types/semver/functions/gte.d.ts
+	  Imported via './functions/gte' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/gte.d.ts@7.3.13'
+	node_modules/@types/semver/functions/lte.d.ts
+	  Imported via './functions/lte' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/lte.d.ts@7.3.13'
+	node_modules/@types/semver/functions/cmp.d.ts
+	  Imported via './functions/cmp' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/cmp.d.ts@7.3.13'
+	node_modules/@types/semver/functions/coerce.d.ts
+	  Imported via './functions/coerce' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/coerce.d.ts@7.3.13'
+	node_modules/@types/semver/classes/comparator.d.ts
+	  Imported via './comparator' from file 'node_modules/@types/semver/classes/range.d.ts' with packageId '@types/semver/classes/comparator.d.ts@7.3.13'
+	  Imported via './classes/comparator' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/classes/comparator.d.ts@7.3.13'
+	node_modules/@types/semver/classes/range.d.ts
+	  Imported via '../classes/range' from file 'node_modules/@types/semver/functions/satisfies.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	  Imported via '../classes/range' from file 'node_modules/@types/semver/ranges/max-satisfying.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	  Imported via '../classes/range' from file 'node_modules/@types/semver/ranges/min-satisfying.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	  Imported via '../classes/range' from file 'node_modules/@types/semver/ranges/to-comparators.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	  Imported via '../classes/range' from file 'node_modules/@types/semver/ranges/min-version.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	  Imported via '../classes/range' from file 'node_modules/@types/semver/ranges/valid.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	  Imported via '../classes/range' from file 'node_modules/@types/semver/ranges/outside.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	  Imported via '../classes/range' from file 'node_modules/@types/semver/ranges/gtr.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	  Imported via '../classes/range' from file 'node_modules/@types/semver/ranges/ltr.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	  Imported via '../classes/range' from file 'node_modules/@types/semver/ranges/intersects.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	  Imported via '../classes/range' from file 'node_modules/@types/semver/ranges/simplify.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	  Imported via '../classes/range' from file 'node_modules/@types/semver/ranges/subset.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	  Imported via './classes/range' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/classes/range.d.ts@7.3.13'
+	node_modules/@types/semver/functions/satisfies.d.ts
+	  Imported via './functions/satisfies' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/functions/satisfies.d.ts@7.3.13'
+	node_modules/@types/semver/ranges/max-satisfying.d.ts
+	  Imported via './ranges/max-satisfying' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/ranges/max-satisfying.d.ts@7.3.13'
+	node_modules/@types/semver/ranges/min-satisfying.d.ts
+	  Imported via './ranges/min-satisfying' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/ranges/min-satisfying.d.ts@7.3.13'
+	node_modules/@types/semver/ranges/to-comparators.d.ts
+	  Imported via './ranges/to-comparators' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/ranges/to-comparators.d.ts@7.3.13'
+	node_modules/@types/semver/ranges/min-version.d.ts
+	  Imported via './ranges/min-version' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/ranges/min-version.d.ts@7.3.13'
+	node_modules/@types/semver/ranges/valid.d.ts
+	  Imported via './ranges/valid' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/ranges/valid.d.ts@7.3.13'
+	node_modules/@types/semver/ranges/outside.d.ts
+	  Imported via './ranges/outside' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/ranges/outside.d.ts@7.3.13'
+	node_modules/@types/semver/ranges/gtr.d.ts
+	  Imported via './ranges/gtr' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/ranges/gtr.d.ts@7.3.13'
+	node_modules/@types/semver/ranges/ltr.d.ts
+	  Imported via './ranges/ltr' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/ranges/ltr.d.ts@7.3.13'
+	node_modules/@types/semver/ranges/intersects.d.ts
+	  Imported via './ranges/intersects' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/ranges/intersects.d.ts@7.3.13'
+	node_modules/@types/semver/ranges/simplify.d.ts
+	  Imported via './ranges/simplify' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/ranges/simplify.d.ts@7.3.13'
+	node_modules/@types/semver/ranges/subset.d.ts
+	  Imported via './ranges/subset' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/ranges/subset.d.ts@7.3.13'
+	node_modules/@types/semver/internals/identifiers.d.ts
+	  Imported via './internals/identifiers' from file 'node_modules/@types/semver/index.d.ts' with packageId '@types/semver/internals/identifiers.d.ts@7.3.13'
+	node_modules/@types/semver/index.d.ts
+	  Entry point for implicit type library 'semver' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/classes/semver.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/parse.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/valid.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/clean.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/inc.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/diff.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/major.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/minor.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/patch.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/prerelease.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/compare.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/rcompare.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/compare-build.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/sort.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/rsort.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/gt.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/lt.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/eq.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/neq.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/gte.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/lte.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/cmp.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/coerce.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/classes/range.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/classes/comparator.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/functions/satisfies.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/ranges/max-satisfying.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/ranges/min-satisfying.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/ranges/to-comparators.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/ranges/min-version.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/ranges/valid.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/ranges/outside.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/ranges/gtr.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/ranges/ltr.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/ranges/intersects.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/ranges/simplify.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	  Imported via '../index' from file 'node_modules/@types/semver/ranges/subset.d.ts' with packageId '@types/semver/index.d.ts@7.3.13'
+	node_modules/@types/stack-utils/index.d.ts
+	  Entry point for implicit type library 'stack-utils' with packageId '@types/stack-utils/index.d.ts@2.0.1'
+	node_modules/@types/yargs-parser/index.d.ts
+	  Imported via 'yargs-parser' from file 'node_modules/@types/yargs/index.d.ts' with packageId '@types/yargs-parser/index.d.ts@21.0.0'
+	  Entry point for implicit type library 'yargs-parser' with packageId '@types/yargs-parser/index.d.ts@21.0.0'
+	node_modules/@types/yargs/index.d.ts
+	  Entry point for implicit type library 'yargs' with packageId '@types/yargs/index.d.ts@17.0.22'
+
+Info 125  [15:52:26.019] -----------------------------------------------
+Info 126  [15:52:26.021] FileWatcher:: Added:: WatchInfo: /home/jfl/projects/jest-custom/package.json 250 undefined WatchType: package.json file
+Info 127  [15:52:26.022] Project '/home/jfl/projects/jest-custom/tsconfig.json' (Configured)
+Info 127  [15:52:26.022] 	Files (167)
+
+Info 127  [15:52:26.022] -----------------------------------------------
+Info 127  [15:52:26.022] Project '/dev/null/inferredProject1*' (Inferred)
+Info 127  [15:52:26.022] 	Files (167)
+
+Info 127  [15:52:26.022] -----------------------------------------------
+Info 127  [15:52:26.022] Open files: 
+Info 127  [15:52:26.022] 	FileName: /home/jfl/projects/jest-custom/tests/index.test.ts ProjectRootPath: /home/jfl/projects/jest-custom
+Info 127  [15:52:26.023] 		Projects: /dev/null/inferredProject1*
+Perf 127  [15:52:26.023] 2::open: async elapsed time (in milliseconds) 2575.4464
+Info 128  [15:52:26.023] request:
+    {
+      "seq": 3,
+      "type": "request",
+      "command": "geterr",
+      "arguments": {
+        "delay": 0,
+        "files": [
+          "/home/jfl/projects/jest-custom/tests/index.test.ts"
+        ]
+      }
+    }
+Perf 129  [15:52:26.023] 3::geterr: async elapsed time (in milliseconds) 0.6550
+Info 130  [15:52:26.025] event:
+    {"seq":0,"type":"event","event":"syntaxDiag","body":{"file":"/home/jfl/projects/jest-custom/tests/index.test.ts","diagnostics":[]}}
+Info 131  [15:52:26.109] event:
+    {"seq":0,"type":"event","event":"semanticDiag","body":{"file":"/home/jfl/projects/jest-custom/tests/index.test.ts","diagnostics":[{"start":{"line":36,"offset":22},"end":{"line":36,"offset":50},"text":"Property 'toMatchExpectedTwoItemsArray' does not exist on type 'JestMatchers<number[]>'.","code":2339,"category":"error"}]}}
+Info 132  [15:52:26.112] event:
+    {"seq":0,"type":"event","event":"suggestionDiag","body":{"file":"/home/jfl/projects/jest-custom/tests/index.test.ts","diagnostics":[]}}
+Info 133  [15:52:26.112] event:
+    {"seq":0,"type":"event","event":"requestCompleted","body":{"request_seq":3}}
