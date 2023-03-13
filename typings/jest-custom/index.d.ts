@@ -21,16 +21,16 @@ declare global {
       toMatchExpectedTwoItemsArray(firstItem: any, secondItem: any): R;
     }
 
-    // interface InverseAsymmetricMatchers {
-    //   toMatchExpectedTwoItemsArray(firstItem: any, secondItem: any): any;
-    // }
+    interface InverseAsymmetricMatchers {
+      toMatchExpectedTwoItemsArray(firstItem: any, secondItem: any): any;
+    }
 
-    // interface ExpectExtendMap {
-    //   // Here, we're describing the call signature of our
+    interface ExpectExtendMap {
+      // Here, we're describing the call signature of our
 
-    //   // matcher for the "expect.extend()" call.
+      // matcher for the "expect.extend()" call.
 
-    //   toMatchExpectedTwoItemsArray: OwnMatcher;
-    // }
+      toMatchExpectedTwoItemsArray: OwnMatcher;
+    }
   }
 }
