@@ -7,7 +7,7 @@ npm i
 code .
 ```
 
-Then open tests/index.tets.ts.
+Then open tests/index.test.ts.
 
 If reproduced, there should be an error "Property 'toMatchExpectedTwoItemsArray' does not exist on type 'JestMatchers<number[]>'.".
 
